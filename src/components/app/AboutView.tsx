@@ -33,9 +33,9 @@ export function AboutView() {
         </div>
 
         <div className="mt-8 w-full space-y-3">
-          <p className="flex items-center justify-center gap-1.5 text-[14px] text-muted-foreground">
-            <Heart className="h-4 w-4 fill-rose-400 text-rose-400" />
-            {t.aboutContact}
+          <p className="text-[14px] leading-relaxed text-muted-foreground">
+            {t.aboutContact}{' '}
+            <Heart className="inline h-4 w-4 align-[-2px] fill-rose-400 text-rose-400" />
           </p>
           <Button asChild variant="outline" className="font-en w-full rounded-2xl" dir="ltr">
             <a href="mailto:amirmhmdglstan@gmail.com">
