@@ -10,7 +10,6 @@ next-env.d.ts
 *.tsbuildinfo
 
 # production
-/build
 /dist
 
 # misc
