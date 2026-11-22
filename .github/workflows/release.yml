@@ -1,0 +1,101 @@
+name: Release builds
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag (e.g. v1.0.0) - the release must already exist'
+        required: true
+        default: 'v1.0.0'
+
+permissions:
+  contents: write
+
+jobs:
+  android:
+    name: Android APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Generate app icons
+        run: node scripts/gen-icons.mjs
+
+      - name: Build web app (static)
+        run: |
+          rm -rf src/app/api
+          STATIC_EXPORT=1 bun run build:static
+
+      - name: Sync Capacitor
+        run: bunx cap sync android
+
+      - name: Apply version
+        run: node scripts/set-version.mjs "${{ github.event.release.tag_name || inputs.tag }}"
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Build release APK
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleRelease --no-daemon
+
+      - name: Rename APK
+        run: |
+          TAG="${{ github.event.release.tag_name || inputs.tag }}"
+          VERSION="${TAG#v}"
+          mv android/app/build/outputs/apk/release/app-release.apk "Dolat-Zaban-v${VERSION}.apk"
+
+      - name: Attach APK to release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.release.tag_name || inputs.tag }}
+          files: Dolat-Zaban-v*.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  windows:
+    name: Windows Setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build web app (static)
+        run: |
+          rm -rf src/app/api
+          STATIC_EXPORT=1 bun run build:static
+
+      - name: Apply version
+        run: node scripts/set-version.mjs "${{ github.event.release.tag_name || inputs.tag }}"
+
+      - name: Build Windows installer
+        run: bunx electron-builder --win nsis --config electron-builder.yml --publish never
+
+      - name: Attach installer to release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.release.tag_name || inputs.tag }}
+          files: dist/*.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,9 @@
+{
+  "appId": "com.dolatzaban.app",
+  "appName": "Dolat Zaban",
+  "webDir": "out",
+  "bundledWebRuntime": false,
+  "android": {
+    "allowMixedContent": false
+  }
+}

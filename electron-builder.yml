@@ -1,0 +1,29 @@
+appId: com.dolatzaban.app
+productName: Dolat Zaban
+directories:
+  output: dist
+  buildResources: build
+files:
+  - electron/**/*
+  - package.json
+asarUnpack:
+  - out/**
+extraResources:
+  - from: out
+    to: app.asar.unpacked/out
+    filter:
+      - "**/*"
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: build/icon.png
+  artifactName: Dolat-Zaban-Setup-v${version}.exe
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Dolat Zaban

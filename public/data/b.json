@@ -1,0 +1,543 @@
+{
+"b": [
+{"w": "baby", "ipa": "ˈbeɪ.bi", "m": [
+{"p": "n", "en": "a very young child, especially a newborn", "fa": "کودک بسیار کوچک، به‌ویژه تازه‌زاده", "fw": "نوزاد"}
+]},
+{"w": "back", "ipa": "bæk", "m": [
+{"p": "n", "en": "the part of the body from the neck to the waist", "fa": "بخشی از بدن، از گردن تا کمر", "fw": "پشت"},
+{"p": "adv", "en": "toward the place where you were before", "fa": "به سمت جایی که پیش‌تر در آن بودید", "fw": "عقب"},
+{"p": "adj", "en": "at or near the rear of something", "fa": "در پشت یا انتهای چیزی", "fw": "پشتی"},
+{"p": "v", "en": "to support a person, plan, or idea", "fa": "از کسی، برنامه یا عقیده‌ای حمایت کردن", "fw": "حمایت کردن"}
+]},
+{"w": "bad", "ipa": "bæd", "m": [
+{"p": "adj", "en": "unpleasant or of poor quality", "fa": "ناخوشایند یا بی‌کیفیت", "fw": "بد"},
+{"p": "adj", "en": "serious or severe", "fa": "جدی یا شدید", "fw": "شدید"}
+]},
+{"w": "bag", "ipa": "bæɡ", "m": [
+{"p": "n", "en": "a soft container for carrying things", "fa": "ظرف نرمی برای حمل وسایل", "fw": "کیف"},
+{"p": "v", "en": "to put things into bags", "fa": "وسایل را در کیسه یا کیف گذاشتن", "fw": "کیسه کردن"}
+]},
+{"w": "baggage", "ipa": "ˈbæɡ.ɪdʒ", "m": [
+{"p": "n", "en": "all the bags a traveler takes on a journey", "fa": "همه‌ی کیف‌ها و چمدان‌های مسافر در سفر", "fw": "بار"}
+]},
+{"w": "bake", "ipa": "beɪk", "m": [
+{"p": "v", "en": "to cook food in an oven", "fa": "پختن غذا در فر", "fw": "پختن"}
+]},
+{"w": "balance", "ipa": "ˈbæl.əns", "m": [
+{"p": "n", "en": "a steady state in which you do not fall", "fa": "وضعیت پایداری که در آن نمی‌افتید", "fw": "تعادل"},
+{"p": "v", "en": "to keep yourself or something steady", "fa": "خود یا چیزی را در حالت پایدار نگه داشتن", "fw": "پایدار نگه داشتن"}
+]},
+{"w": "ball", "ipa": "bɔːl", "m": [
+{"p": "n", "en": "a round object used in games and sports", "fa": "جسم گردی که در بازی و ورزش به کار می‌رود", "fw": "توپ"},
+{"p": "n", "en": "a large formal party with dancing", "fa": "مهمانی بزرگ و رسمی همراه با رقص", "fw": "مهمانی رقص"}
+]},
+{"w": "banana", "ipa": "bəˈnæn.ə", "m": [
+{"p": "n", "en": "a long curved yellow fruit", "fa": "میوه‌ای دراز و خمیده با رنگ زرد", "fw": "موز"}
+]},
+{"w": "ban", "ipa": "bæn", "m": [
+{"p": "v", "en": "to officially forbid something", "fa": "چیزی را به‌طور رسمی ممنوع کردن", "fw": "ممنوع کردن"},
+{"p": "n", "en": "an official order forbidding something", "fa": "فرمان رسمی برای ممنوع کردن چیزی", "fw": "ممنوعیت"}
+]},
+{"w": "band", "ipa": "bænd", "m": [
+{"p": "n", "en": "a group of people who play music together", "fa": "گروهی که با هم موسیقی می‌نوازند", "fw": "گروه موسیقی"},
+{"p": "n", "en": "a flat strip of material holding things together", "fa": "نوار تخت برای نگه‌داشتن چیزها کنار هم", "fw": "نوار"}
+]},
+{"w": "bandage", "ipa": "ˈbæn.dɪdʒ", "m": [
+{"p": "n", "en": "a strip of cloth tied around a wound", "fa": "پارچه‌ای که دور زخم می‌پیچند", "fw": "پیچ زخم"}
+]},
+{"w": "bank", "ipa": "bæŋk", "m": [
+{"p": "n", "en": "a business that keeps money safe for people", "fa": "کسب‌وکاری که پول مردم را امانت نگه می‌دارد", "fw": "بانک"},
+{"p": "n", "en": "the ground at the side of a river", "fa": "خشکی کنار رودخانه", "fw": "کرانه"}
+]},
+{"w": "bar", "ipa": "bɑːr", "m": [
+{"p": "n", "en": "a place where drinks, especially alcoholic ones, are served", "fa": "محلی که در آن نوشیدنی، به‌ویژه مشروب، سرو می‌کنند", "fw": "بار"},
+{"p": "n", "en": "a long solid piece of metal, soap, or chocolate", "fa": "قطعه‌ی کشیده و توپُری از فلز، صابون یا شکلات", "fw": "قطعه"},
+{"p": "v", "en": "to block something or prevent it from happening", "fa": "جلوی چیزی را گرفتن یا مانع رخ‌دادن آن شدن", "fw": "منع کردن"}
+]},
+{"w": "bare", "ipa": "ber", "m": [
+{"p": "adj", "en": "not covered or decorated", "fa": "بدون پوشش یا تزئین", "fw": "برهنه"}
+]},
+{"w": "bargain", "ipa": "ˈbɑːr.ɡən", "m": [
+{"p": "n", "en": "something sold for less than its usual price", "fa": "کالایی که ارزان‌تر از قیمت معمول به فروش می‌رسد", "fw": "کالای ارزان"},
+{"p": "v", "en": "to discuss the price in order to pay less", "fa": "برای پرداخت مبلغ کمتر، درباره‌ی قیمت چانه زدن", "fw": "چانه زدن"}
+]},
+{"w": "barn", "ipa": "bɑːrn", "m": [
+{"p": "n", "en": "a farm building for animals or crops", "fa": "ساختمانی در مزرعه برای نگهداری حیوانات یا محصولات", "fw": "انبار"}
+]},
+{"w": "base", "ipa": "beɪs", "m": [
+{"p": "n", "en": "the bottom part of something", "fa": "بخش زیرین چیزی", "fw": "پایه"},
+{"p": "n", "en": "a place where soldiers or a team are stationed", "fa": "محل استقرار سربازان یا یک تیم", "fw": "پایگاه"}
+]},
+{"w": "basement", "ipa": "ˈbeɪs.mənt", "m": [
+{"p": "n", "en": "a room or floor below ground level", "fa": "اتاق یا طبقه‌ای در زیر سطح زمین", "fw": "زیرزمین"}
+]},
+{"w": "basic", "ipa": "ˈbeɪ.sɪk", "m": [
+{"p": "adj", "en": "forming the most important part of something", "fa": "تشکیل‌دهنده‌ی مهم‌ترین بخش چیزی؛ ضروری", "fw": "اصلی"},
+{"p": "adj", "en": "simple and without complication", "fa": "ساده و بدون پیچیدگی", "fw": "ساده"}
+]},
+{"w": "basket", "ipa": "ˈbæs.kɪt", "m": [
+{"p": "n", "en": "a container woven from plant fibers", "fa": "ظرفی که از الیاف گیاهی بافته می‌شود", "fw": "سبد"}
+]},
+{"w": "bat", "ipa": "bæt", "m": [
+{"p": "n", "en": "a small flying animal active at night", "fa": "حیوان پرنده‌ی کوچکی که در شب فعال است", "fw": "خفاش"},
+{"p": "n", "en": "a stick used to hit a ball in games", "fa": "چوبی برای زدن توپ در بازی‌ها", "fw": "چوب"}
+]},
+{"w": "bath", "ipa": "bæθ", "m": [
+{"p": "n", "en": "an act of washing your whole body in water", "fa": "شست‌وشوی تمام بدن در آب", "fw": "حمام"}
+]},
+{"w": "bathroom", "ipa": "ˈbæθ.ruːm", "m": [
+{"p": "n", "en": "a room with a bath, shower, and toilet", "fa": "اتاقی مجهز به حمام، دوش و توالت", "fw": "سرویس بهداشتی"}
+]},
+{"w": "battle", "ipa": "ˈbæt.əl", "m": [
+{"p": "n", "en": "a fight between armies or groups", "fa": "نبرد میان دو ارتش یا گروه", "fw": "نبرد"},
+{"p": "v", "en": "to struggle hard against something", "fa": "مبارزه‌ی سختی با چیزی کردن", "fw": "مبارزه کردن"}
+]},
+{"w": "be", "ipa": "biː", "m": [
+{"p": "v", "en": "used to say what someone or something is", "fa": "برای بیان این‌که کسی یا چیزی چیست", "fw": "بودن"},
+{"p": "v", "en": "to exist or be present", "fa": "وجود داشتن یا حاضر بودن", "fw": "وجود داشتن"}
+]},
+{"w": "beach", "ipa": "biːtʃ", "m": [
+{"p": "n", "en": "sandy or rocky land beside the sea", "fa": "خشکی شنی یا سنگی در کنار دریا", "fw": "ساحل"}
+]},
+{"w": "bean", "ipa": "biːn", "m": [
+{"p": "n", "en": "a seed or pod eaten as food", "fa": "دانه یا نیام خوراکی از خانواده‌ی حبوبات", "fw": "لوبیا"}
+]},
+{"w": "bear", "ipa": "ber", "m": [
+{"p": "v", "en": "to accept or endure something difficult", "fa": "تاب آوردن و تحمل کردن چیز دشوار", "fw": "تحمل کردن"},
+{"p": "v", "en": "to carry or hold something", "fa": "حمل یا نگه‌داشتن چیزی", "fw": "حمل کردن"},
+{"p": "n", "en": "a large wild animal with thick fur", "fa": "حیوان وحشی بزرگی با موی ضخیم", "fw": "خرس"}
+]},
+{"w": "beard", "ipa": "bɪrd", "m": [
+{"p": "n", "en": "hair growing on a man's chin and cheeks", "fa": "موی صورت که روی چانه و گونه می‌روید", "fw": "ریش"}
+]},
+{"w": "beat", "ipa": "biːt", "m": [
+{"p": "v", "en": "to defeat someone in a game or contest", "fa": "شکست دادن کسی در بازی یا مسابقه", "fw": "شکست دادن"},
+{"p": "v", "en": "to hit something repeatedly", "fa": "به‌طور مکرر زدن", "fw": "زدن"},
+{"p": "v", "en": "of the heart, to move with a regular rhythm", "fa": "ضربان منظم داشتن (قلب)", "fw": "تپیدن"},
+{"p": "n", "en": "the main rhythm in a piece of music", "fa": "ضرب‌آهنگ اصلی در قطعه‌ای موسیقی", "fw": "ضرب"}
+]},
+{"w": "beautiful", "ipa": "ˈbjuː.tɪ.fəl", "m": [
+{"p": "adj", "en": "very attractive and pleasing to look at", "fa": "بسیار زیبا و جذاب", "fw": "زیبا"}
+]},
+{"w": "because", "ipa": "bɪˈkɔːz", "m": [
+{"p": "conj", "en": "for the reason that", "fa": "به این دلیل که", "fw": "زیرا"}
+]},
+{"w": "become", "ipa": "bɪˈkʌm", "m": [
+{"p": "v", "en": "to begin to be a particular thing", "fa": "به چیزی خاص تبدیل شدن", "fw": "شدن"}
+]},
+{"w": "bed", "ipa": "bed", "m": [
+{"p": "n", "en": "a piece of furniture for sleeping on", "fa": "اثاثیاتی که روی آن می‌خوابند", "fw": "تخت"},
+{"p": "n", "en": "the bottom of a river, lake, or sea", "fa": "کف رودخانه، دریاچه یا دریا", "fw": "بستر"}
+]},
+{"w": "bedroom", "ipa": "ˈbed.ruːm", "m": [
+{"p": "n", "en": "a room used for sleeping", "fa": "اتاقی که برای خوابیدن به کار می‌رود", "fw": "اتاق خواب"}
+]},
+{"w": "bee", "ipa": "biː", "m": [
+{"p": "n", "en": "a flying insect that makes honey", "fa": "حشره‌ی پرنده‌ای که عسل تولید می‌کند", "fw": "زنبور"}
+]},
+{"w": "beef", "ipa": "biːf", "m": [
+{"p": "n", "en": "meat from a cow", "fa": "گوشت گاو", "fw": "گوشت گاو"}
+]},
+{"w": "beer", "ipa": "bɪr", "m": [
+{"p": "n", "en": "an alcoholic drink made from grain", "fa": "نوشیدنی الکلی که از غلات تهیه می‌شود", "fw": "آبجو"}
+]},
+{"w": "before", "ipa": "bɪˈfɔːr", "m": [
+{"p": "prep", "en": "earlier than something in time or order", "fa": "در زمان یا ترتیب، پیش از چیزی", "fw": "قبل از"},
+{"p": "conj", "en": "earlier than the time when something happens", "fa": "پیش از زمانی که چیزی رخ می‌دهد", "fw": "قبل از اینکه"},
+{"p": "adv", "en": "at an earlier time", "fa": "در زمانی پیش‌تر؛ قبلاً", "fw": "قبلاً"}
+]},
+{"w": "beg", "ipa": "beɡ", "m": [
+{"p": "v", "en": "to ask urgently because you badly need something", "fa": "التماس و خواهش کردن، چون به شدت به چیزی نیاز دارید", "fw": "التماس کردن"}
+]},
+{"w": "begin", "ipa": "bɪˈɡɪn", "m": [
+{"p": "v", "en": "to start doing something", "fa": "به انجام کاری شروع کردن", "fw": "شروع کردن"}
+]},
+{"w": "behave", "ipa": "bɪˈheɪv", "m": [
+{"p": "v", "en": "to act in a particular way", "fa": "به شیوه‌ای خاص رفتار کردن", "fw": "رفتار کردن"},
+{"p": "v", "en": "to act politely toward others", "fa": "در برابر دیگران مؤدبانه رفتار کردن", "fw": "ادب داشتن"}
+]},
+{"w": "behavior", "ipa": "bɪˈheɪ.vjɚ", "m": [
+{"p": "n", "en": "the way a person acts", "fa": "شیوه‌ی رفتار یک شخص", "fw": "رفتار"}
+]},
+{"w": "behind", "ipa": "bɪˈhaɪnd", "m": [
+{"p": "prep", "en": "at the back of something or someone", "fa": "در پشت چیزی یا کسی", "fw": "پشت"},
+{"p": "adv", "en": "in or toward a back position", "fa": "در یا به سمت عقب", "fw": "عقب"}
+]},
+{"w": "being", "ipa": "ˈbiː.ɪŋ", "m": [
+{"p": "n", "en": "a living creature", "fa": "جاندار؛ موجود زنده", "fw": "موجود"},
+{"p": "n", "en": "the state of existing", "fa": "حالت وجود و هستی", "fw": "هستی"}
+]},
+{"w": "belief", "ipa": "bɪˈliːf", "m": [
+{"p": "n", "en": "an idea you accept as true", "fa": "فکری که آن را درست می‌دانید", "fw": "باور"},
+{"p": "n", "en": "trust in someone's ability or character", "fa": "اعتماد به توانایی یا شخصیت کسی", "fw": "اعتماد"}
+]},
+{"w": "believe", "ipa": "bɪˈliːv", "m": [
+{"p": "v", "en": "to think that something is true", "fa": "پنداشتن این‌که چیزی درست است", "fw": "باور کردن"},
+{"p": "v", "en": "to trust what someone says", "fa": "به گفته‌ی کسی اعتماد کردن", "fw": "اعتماد کردن"}
+]},
+{"w": "bell", "ipa": "bel", "m": [
+{"p": "n", "en": "a hollow metal object that rings when struck", "fa": "جسم توخالی فلزی که با کوفتن به آن صدا می‌دهد", "fw": "زنگ"}
+]},
+{"w": "belong", "ipa": "bɪˈlɔːŋ", "m": [
+{"p": "v", "en": "to be the property of someone", "fa": "متعلق به کسی بودن", "fw": "تعلق داشتن"}
+]},
+{"w": "below", "ipa": "bɪˈloʊ", "m": [
+{"p": "prep", "en": "in a lower place than something", "fa": "در مکانی پایین‌تر از چیزی", "fw": "زیر"},
+{"p": "adv", "en": "at or to a lower place", "fa": "در یا به سمت پایین", "fw": "پایین"}
+]},
+{"w": "belt", "ipa": "belt", "m": [
+{"p": "n", "en": "a strip of leather worn around the waist", "fa": "کمری چرمی که دور کمر می‌بندند", "fw": "کمربند"}
+]},
+{"w": "bench", "ipa": "bentʃ", "m": [
+{"p": "n", "en": "a long seat, usually wooden, in a public place", "fa": "نیمکت بلند، معمولاً چوبی، در مکان‌های عمومی", "fw": "نیمکت"}
+]},
+{"w": "bend", "ipa": "bend", "m": [
+{"p": "v", "en": "to curve something or become curved", "fa": "خم کردن یا خمیده شدن", "fw": "خم کردن"},
+{"p": "n", "en": "a curve in a road or river", "fa": "پیچی در جاده یا رودخانه", "fw": "پیچ"}
+]},
+{"w": "beneath", "ipa": "bɪˈniːθ", "m": [
+{"p": "prep", "en": "directly under something", "fa": "بلافاصله زیر چیزی", "fw": "زیر"}
+]},
+{"w": "benefit", "ipa": "ˈben.ə.fɪt", "m": [
+{"p": "n", "en": "a helpful or good effect", "fa": "اثر مفید یا خوب", "fw": "سود"},
+{"p": "v", "en": "to gain an advantage from something", "fa": "از چیزی سود و بهره بردن", "fw": "سود بردن"}
+]},
+{"w": "beside", "ipa": "bɪˈsaɪd", "m": [
+{"p": "prep", "en": "next to or at the side of", "fa": "در کنار کسی یا چیزی", "fw": "کنار"}
+]},
+{"w": "besides", "ipa": "bɪˈsaɪdz", "m": [
+{"p": "adv", "en": "also; in addition to what was said", "fa": "همچنین؛ علاوه بر آنچه گفته شد", "fw": "همچنین"},
+{"p": "prep", "en": "in addition to", "fa": "علاوه بر", "fw": "علاوه بر"}
+]},
+{"w": "best", "ipa": "best", "m": [
+{"p": "adj", "en": "better than all others", "fa": "بهتر از همه‌ی دیگران", "fw": "بهترین"},
+{"p": "adv", "en": "in the most excellent way", "fa": "به بهترین شکل", "fw": "بهترین"}
+]},
+{"w": "bet", "ipa": "bet", "m": [
+{"p": "v", "en": "to risk money on the result of something", "fa": "پول بر سر نتیجه‌ی چیزی شرط بستن", "fw": "شرط بستن"},
+{"p": "n", "en": "money risked on an uncertain result", "fa": "پولی که بر سر نتیجه‌ی نامعلوم شرط می‌بندند", "fw": "شرط"}
+]},
+{"w": "better", "ipa": "ˈbet.ɚ", "m": [
+{"p": "adj", "en": "more good or more satisfactory", "fa": "خوب‌تر یا رضایت‌بخش‌تر", "fw": "بهتر"},
+{"p": "adv", "en": "in a better way", "fa": "به شیوه‌ای بهتر", "fw": "بهتر"},
+{"p": "v", "en": "to improve something", "fa": "چیزی را بهتر کردن", "fw": "بهتر کردن"}
+]},
+{"w": "between", "ipa": "bɪˈtwiːn", "m": [
+{"p": "prep", "en": "in the space or time separating two things", "fa": "در فاصله‌ی مکانی یا زمانی میان دو چیز", "fw": "میان"}
+]},
+{"w": "beyond", "ipa": "biˈjɑːnd", "m": [
+{"p": "prep", "en": "on the far side of something", "fa": "در آن‌سوی چیزی", "fw": "آن‌سو"},
+{"p": "prep", "en": "outside the limits of something", "fa": "فراتر از حدود یا توان چیزی", "fw": "فراتر از"}
+]},
+{"w": "bicycle", "ipa": "ˈbaɪ.sɪ.kəl", "m": [
+{"p": "n", "en": "a two-wheeled vehicle you ride by pedaling", "fa": "وسیله نقلیه‌ای با دو چرخ که با پدال رانده می‌شود", "fw": "دوچرخه"}
+]},
+{"w": "big", "ipa": "bɪɡ", "m": [
+{"p": "adj", "en": "large in size or amount", "fa": "بزرگ در اندازه یا مقدار", "fw": "بزرگ"},
+{"p": "adj", "en": "important or serious", "fa": "مهم یا جدی", "fw": "مهم"}
+]},
+{"w": "bike", "ipa": "baɪk", "m": [
+{"p": "n", "en": "a bicycle or motorcycle", "fa": "دوچرخه یا موتورسیکلت", "fw": "دوچرخه"}
+]},
+{"w": "bill", "ipa": "bɪl", "m": [
+{"p": "n", "en": "a paper showing how much money you must pay", "fa": "برگه‌ای که نشان می‌دهد چه مبلغی باید بپردازید", "fw": "قبض"},
+{"p": "n", "en": "a piece of paper money", "fa": "برگه‌ای از پول کاغذی", "fw": "اسکناس"},
+{"p": "n", "en": "a plan for a new law", "fa": "طرحی برای قانون جدید", "fw": "لایحه"}
+]},
+{"w": "bin", "ipa": "bɪn", "m": [
+{"p": "n", "en": "a container for throwing away rubbish", "fa": "ظرفی که زباله در آن می‌ریزند", "fw": "سطل زباله"}
+]},
+{"w": "biology", "ipa": "baɪˈɑː.lə.dʒi", "m": [
+{"p": "n", "en": "the scientific study of living things", "fa": "بررسی علمی جانداران", "fw": "زیست‌شناسی"}
+]},
+{"w": "bird", "ipa": "bɝːd", "m": [
+{"p": "n", "en": "an animal with feathers and wings, usually able to fly", "fa": "حیوانی با پر و بال که معمولاً می‌تواند پرواز کند", "fw": "پرنده"}
+]},
+{"w": "birth", "ipa": "bɝːθ", "m": [
+{"p": "n", "en": "the time when a baby comes out of its mother", "fa": "زمانی که نوزاد از مادر بیرون می‌آید", "fw": "تولد"}
+]},
+{"w": "birthday", "ipa": "ˈbɝːθ.deɪ", "m": [
+{"p": "n", "en": "the day each year when your birth is celebrated", "fa": "سالگرد روز تولد کسی در هر سال", "fw": "تولد"}
+]},
+{"w": "bit", "ipa": "bɪt", "m": [
+{"p": "n", "en": "a small piece of something", "fa": "تکه‌ی کوچکی از چیزی", "fw": "تکه"},
+{"p": "n", "en": "a fairly small amount", "fa": "مقداری کم", "fw": "کمی"}
+]},
+{"w": "bite", "ipa": "baɪt", "m": [
+{"p": "v", "en": "to cut into something with your teeth", "fa": "فرو بردن دندان در چیزی", "fw": "گاز گرفتن"},
+{"p": "n", "en": "an act of biting", "fa": "یک‌بار گاز گرفتن", "fw": "گاز"}
+]},
+{"w": "bitter", "ipa": "ˈbɪt.ɚ", "m": [
+{"p": "adj", "en": "having a sharp taste like unsweetened coffee", "fa": "دارای طعم تند مانند قهوه‌ی تلخ", "fw": "تلخ"},
+{"p": "adj", "en": "angry because of unfair treatment", "fa": "خشمگین و کینه‌دار در اثر رفتار ناعادلانه", "fw": "کینه‌توز"}
+]},
+{"w": "black", "ipa": "blæk", "m": [
+{"p": "adj", "en": "having the darkest color, like the night", "fa": "دارای تیره‌ترین رنگ، مانند شب", "fw": "سیاه"},
+{"p": "n", "en": "the darkest color", "fa": "تیره‌ترین رنگ", "fw": "سیاهی"}
+]},
+{"w": "blame", "ipa": "bleɪm", "m": [
+{"p": "v", "en": "to say someone is responsible for something bad", "fa": "گفتن این‌که کسی مسئول خطاست", "fw": "مقصر دانستن"},
+{"p": "n", "en": "responsibility for a mistake or something wrong", "fa": "مسئولیت اشتباه یا خطا", "fw": "تقصیر"}
+]},
+{"w": "blank", "ipa": "blæŋk", "m": [
+{"p": "adj", "en": "empty, with nothing written on it", "fa": "خالی، بدون هیچ نوشته‌ای", "fw": "خالی"},
+{"p": "n", "en": "an empty space to be filled in", "fa": "جای خالی برای پر کردن", "fw": "جای خالی"}
+]},
+{"w": "blanket", "ipa": "ˈblæŋ.kɪt", "m": [
+{"p": "n", "en": "a warm cover used on a bed", "fa": "پوشش گرمی که روی تخت می‌اندازند", "fw": "پتو"}
+]},
+{"w": "bleed", "ipa": "bliːd", "m": [
+{"p": "v", "en": "to lose blood from the body", "fa": "خون از بدن بیرون رفتن؛ خونریزی کردن", "fw": "خونریزی کردن"}
+]},
+{"w": "blend", "ipa": "blend", "m": [
+{"p": "v", "en": "to mix things smoothly together", "fa": "چیزها را نرم و یکدست با هم مخلوط کردن", "fw": "آمیختن"},
+{"p": "n", "en": "a smooth mixture of things", "fa": "مخلوطی یکدست از چند چیز", "fw": "مخلوط"}
+]},
+{"w": "blind", "ipa": "blaɪnd", "m": [
+{"p": "adj", "en": "unable to see", "fa": "ناتوان از دیدن", "fw": "نابینا"},
+{"p": "n", "en": "a covering pulled down over a window", "fa": "پوششی که روی پنجره پایین کشیده می‌شود", "fw": "پرده"}
+]},
+{"w": "block", "ipa": "blɑːk", "m": [
+{"p": "v", "en": "to prevent movement or progress", "fa": "جلوی حرکت یا پیشرفت را گرفتن", "fw": "مسدود کردن"},
+{"p": "n", "en": "a large solid piece of wood or stone", "fa": "قطعه‌ی بزرگ و توپُری از چوب یا سنگ", "fw": "بلوک"},
+{"p": "n", "en": "the distance along a street between two crossings", "fa": "فاصله‌ی میان دو تقاطع در یک خیابان", "fw": "بلوک"}
+]},
+{"w": "blood", "ipa": "blʌd", "m": [
+{"p": "n", "en": "the red liquid that flows through the body", "fa": "مایع سرخی که در رگ‌های بدن جریان دارد", "fw": "خون"}
+]},
+{"w": "blouse", "ipa": "blaʊs", "m": [
+{"p": "n", "en": "a loose shirt worn by women", "fa": "پیراهن گشادی که زنان می‌پوشند", "fw": "بلوز"}
+]},
+{"w": "blow", "ipa": "bloʊ", "m": [
+{"p": "v", "en": "to send air out of your mouth", "fa": "از دهان خود هوا بیرون دادن", "fw": "فوت کردن"},
+{"p": "v", "en": "of the wind, to be moving", "fa": "وزیدن (باد)", "fw": "وزیدن"},
+{"p": "n", "en": "a hard hit with the hand or a weapon", "fa": "ضربه‌ی محکم با دست یا سلاح", "fw": "ضربه"}
+]},
+{"w": "blue", "ipa": "bluː", "m": [
+{"p": "adj", "en": "having the color of a clear sky", "fa": "دارای رنگ آسمان صاف", "fw": "آبی"},
+{"p": "adj", "en": "feeling sad", "fa": "داشتن احساس غمگینی", "fw": "غمگین"}
+]},
+{"w": "board", "ipa": "bɔːrd", "m": [
+{"p": "n", "en": "a flat piece of cut wood", "fa": "تخته‌ی صاف و برش‌خورده از چوب", "fw": "تخته"},
+{"p": "n", "en": "a group of people who direct an organization", "fa": "گروهی از مدیران که سازمان را اداره می‌کنند", "fw": "هیئت مدیره"},
+{"p": "v", "en": "to get onto a ship, train, or plane", "fa": "سوار کشتی، قطار یا هواپیما شدن", "fw": "سوار شدن"}
+]},
+{"w": "boat", "ipa": "boʊt", "m": [
+{"p": "n", "en": "a small vehicle for traveling on water", "fa": "وسیله‌ی کوچکی برای سفر روی آب", "fw": "قایق"}
+]},
+{"w": "body", "ipa": "ˈbɑː.di", "m": [
+{"p": "n", "en": "all the physical parts of a person or animal", "fa": "تمام بخش‌های جسمانی انسان یا حیوان", "fw": "بدن"},
+{"p": "n", "en": "the main part of a building or vehicle", "fa": "بخش اصلی ساختمان یا خودرو", "fw": "بدنه"}
+]},
+{"w": "boil", "ipa": "bɔɪl", "m": [
+{"p": "v", "en": "to heat a liquid until it bubbles", "fa": "مایع را تا حد حباب‌زدن گرم کردن", "fw": "جوشاندن"},
+{"p": "v", "en": "of a liquid, to bubble because of heat", "fa": "جوشیدن مایع بر اثر گرما", "fw": "جوشیدن"}
+]},
+{"w": "bold", "ipa": "boʊld", "m": [
+{"p": "adj", "en": "brave and confident", "fa": "شجاع و با اعتماد به نفس", "fw": "شجاع"},
+{"p": "adj", "en": "of printing, thick and dark", "fa": "(حروف چاپی) ضخیم و سیاه", "fw": "ضخیم"}
+]},
+{"w": "bomb", "ipa": "bɑːm", "m": [
+{"p": "n", "en": "a weapon that explodes and causes damage", "fa": "سلاحی که منفجر می‌شود و خسارت می‌زند", "fw": "بمب"},
+{"p": "v", "en": "to attack a place with bombs", "fa": "جایی را با بمب مورد حمله قرار دادن", "fw": "بمباران کردن"}
+]},
+{"w": "bone", "ipa": "boʊn", "m": [
+{"p": "n", "en": "one of the hard white parts of the skeleton", "fa": "یکی از بخش‌های سخت و سفید اسکلت بدن", "fw": "استخوان"}
+]},
+{"w": "book", "ipa": "bʊk", "m": [
+{"p": "n", "en": "a set of printed pages fastened together for reading", "fa": "مجموعه‌ای از برگه‌های چاپی برای خواندن", "fw": "کتاب"},
+{"p": "v", "en": "to reserve a seat, room, or ticket", "fa": "صندلی، اتاق یا بلیطی را رزرو کردن", "fw": "رزرو کردن"}
+]},
+{"w": "boot", "ipa": "buːt", "m": [
+{"p": "n", "en": "a strong shoe covering the foot and ankle", "fa": "کفشی محکم که پا و مچ را می‌پوشاند", "fw": "چکمه"},
+{"p": "n", "en": "the closed space at the back of a car", "fa": "فضای بسته‌ی عقب خودرو", "fw": "صندوق"}
+]},
+{"w": "border", "ipa": "ˈbɔːr.dɚ", "m": [
+{"p": "n", "en": "the line separating two countries or regions", "fa": "خط جداکننده‌ی دو کشور یا ناحیه", "fw": "مرز"},
+{"p": "v", "en": "to be next to a place", "fa": "همجوار با جایی بودن", "fw": "هم‌مرز بودن"}
+]},
+{"w": "bored", "ipa": "bɔːrd", "m": [
+{"p": "adj", "en": "tired because nothing is interesting", "fa": "بی‌حوصله و دلزده چون هیچ چیز جذابی نیست", "fw": "دلزده"}
+]},
+{"w": "boring", "ipa": "ˈbɔːr.ɪŋ", "m": [
+{"p": "adj", "en": "not interesting or exciting", "fa": "غیرجذاب و کسل‌کننده", "fw": "خسته‌کننده"}
+]},
+{"w": "born", "ipa": "bɔːrn", "m": [
+{"p": "adj", "en": "brought into life by your mother", "fa": "از مادر به دنیا آمده", "fw": "زاده"}
+]},
+{"w": "borrow", "ipa": "ˈbɔːr.oʊ", "m": [
+{"p": "v", "en": "to take something and return it later", "fa": "گرفتن چیزی به این شرط که بعداً پس دهید", "fw": "قرض گرفتن"}
+]},
+{"w": "boss", "ipa": "bɔːs", "m": [
+{"p": "n", "en": "the person who manages workers and tells them what to do", "fa": "شخصی که کارکنان را اداره و به آنان دستور می‌دهد", "fw": "رئیس"}
+]},
+{"w": "both", "ipa": "boʊθ", "m": [
+{"p": "pron", "en": "the two together; one and also the other", "fa": "دو نفر یا دو چیز با هم", "fw": "هر دو"}
+]},
+{"w": "bottle", "ipa": "ˈbɑː.təl", "m": [
+{"p": "n", "en": "a glass or plastic container for liquids, with a narrow neck", "fa": "ظرف شیشه‌ای یا پلاستیکی با گردن باریک برای مایعات", "fw": "بطری"}
+]},
+{"w": "bottom", "ipa": "ˈbɑː.təm", "m": [
+{"p": "n", "en": "the lowest part of something", "fa": "پایین‌ترین بخش چیزی", "fw": "کف"},
+{"p": "adj", "en": "in the lowest position", "fa": "در پایین‌ترین جایگاه", "fw": "پایینی"}
+]},
+{"w": "bounce", "ipa": "baʊns", "m": [
+{"p": "v", "en": "to spring back after hitting a surface", "fa": "پس از برخورد با سطح، به بالا و پایین جهیدن", "fw": "جهش کردن"},
+{"p": "n", "en": "the action of bouncing", "fa": "عمل جهش", "fw": "جهش"}
+]},
+{"w": "bowl", "ipa": "boʊl", "m": [
+{"p": "n", "en": "a deep round open dish for food", "fa": "ظرف گرد و عمیق و باز برای غذا", "fw": "کاسه"}
+]},
+{"w": "box", "ipa": "bɑːks", "m": [
+{"p": "n", "en": "a container with flat sides, often with a lid", "fa": "ظرفی با دیواره‌های صاف که اغلب در دارد", "fw": "جعبه"},
+{"p": "v", "en": "to fight with the fists as a sport", "fa": "انجام ورزش مشت‌بازی", "fw": "بوکس کردن"}
+]},
+{"w": "boy", "ipa": "bɔɪ", "m": [
+{"p": "n", "en": "a young male person", "fa": "پسر یا مرد جوان", "fw": "پسر"}
+]},
+{"w": "brain", "ipa": "breɪn", "m": [
+{"p": "n", "en": "the organ inside the head that controls the body", "fa": "اندام درون سر که بدن را کنترل می‌کند", "fw": "مغز"}
+]},
+{"w": "brake", "ipa": "breɪk", "m": [
+{"p": "n", "en": "a device for slowing or stopping a vehicle", "fa": "دستگاهی برای کند یا متوقف کردن خودرو", "fw": "ترمز"},
+{"p": "v", "en": "to make a vehicle slow using the brakes", "fa": "با ترمز، خودرو را کند کردن", "fw": "ترمز کردن"}
+]},
+{"w": "branch", "ipa": "bræntʃ", "m": [
+{"p": "n", "en": "a part of a tree growing from the trunk", "fa": "بخشی از درخت که از تنه می‌روید", "fw": "شاخه"},
+{"p": "n", "en": "a local office of a business or organization", "fa": "دفتر محلی یک کسب‌وکار یا سازمان", "fw": "شعبه"}
+]},
+{"w": "brand", "ipa": "brænd", "m": [
+{"p": "n", "en": "the name a company gives its products", "fa": "نامی که شرکت به محصول خود می‌دهد", "fw": "برند"}
+]},
+{"w": "brave", "ipa": "breɪv", "m": [
+{"p": "adj", "en": "showing no fear of danger", "fa": "بی‌ترس در برابر خطر", "fw": "شجاع"}
+]},
+{"w": "bread", "ipa": "bred", "m": [
+{"p": "n", "en": "a basic food made from flour and water", "fa": "خوراک اصلی که از آرد و آب درست می‌شود", "fw": "نان"}
+]},
+{"w": "break", "ipa": "breɪk", "m": [
+{"p": "v", "en": "to damage something so it comes apart", "fa": "خراب کردن چیزی طوری که تکه‌تکه شود", "fw": "شکستن"},
+{"p": "v", "en": "to fail to follow a rule or promise", "fa": "پایبند نماندن به قانون یا وعده", "fw": "نقض کردن"},
+{"p": "n", "en": "a short period of rest", "fa": "دوره‌ی کوتاه استراحت", "fw": "استراحت"}
+]},
+{"w": "breakfast", "ipa": "ˈbrek.fəst", "m": [
+{"p": "n", "en": "the first meal of the day", "fa": "نخستین وعده‌ی غذایی روز", "fw": "صبحانه"}
+]},
+{"w": "breath", "ipa": "breθ", "m": [
+{"p": "n", "en": "air taken into and let out of the lungs", "fa": "هوایی که به شش‌ها وارد و از آن‌ها بیرون می‌شود", "fw": "نفس"}
+]},
+{"w": "breathe", "ipa": "briːð", "m": [
+{"p": "v", "en": "to take air into the lungs and let it out", "fa": "هوا را به درون شش‌ها بردن و بیرون دادن", "fw": "نفس کشیدن"}
+]},
+{"w": "breeze", "ipa": "briːz", "m": [
+{"p": "n", "en": "a soft gentle wind", "fa": "بادی ملایم و خوشایند", "fw": "نسیم"}
+]},
+{"w": "brick", "ipa": "brɪk", "m": [
+{"p": "n", "en": "a hard block of baked clay used for building", "fa": "قطعه‌ی سختی از گِل پخته که در ساختمان به کار می‌رود", "fw": "آجر"}
+]},
+{"w": "bride", "ipa": "braɪd", "m": [
+{"p": "n", "en": "a woman on her wedding day or just married", "fa": "زن در روز عروسی یا تازه‌عروس", "fw": "عروس"}
+]},
+{"w": "bridge", "ipa": "brɪdʒ", "m": [
+{"p": "n", "en": "a structure built over a river or road", "fa": "سازه‌ای که روی رودخانه یا جاده ساخته می‌شود", "fw": "پل"},
+{"p": "v", "en": "to connect two things", "fa": "میان دو چیز پیوند برقرار کردن", "fw": "پیوند دادن"}
+]},
+{"w": "brief", "ipa": "briːf", "m": [
+{"p": "adj", "en": "lasting or taking a short time", "fa": "کوتاه‌مدت یا مختصر", "fw": "کوتاه"},
+{"p": "n", "en": "a short summary of the main facts", "fa": "خلاصه‌ی مختصری از نکات اصلی", "fw": "خلاصه"}
+]},
+{"w": "bright", "ipa": "braɪt", "m": [
+{"p": "adj", "en": "full of light; shining", "fa": "پُرنور؛ تابان", "fw": "روشن"},
+{"p": "adj", "en": "clever and quick at learning", "fa": "باهوش و زودفهم", "fw": "باهوش"}
+]},
+{"w": "brilliant", "ipa": "ˈbrɪl.jənt", "m": [
+{"p": "adj", "en": "full of bright shining light", "fa": "پر از نور خیره‌کننده", "fw": "درخشان"},
+{"p": "adj", "en": "extremely clever or skilful", "fa": "بسیار باهوش و ماهر", "fw": "باهوش"}
+]},
+{"w": "bring", "ipa": "brɪŋ", "m": [
+{"p": "v", "en": "to carry something to the place where you are", "fa": "آوردن چیزی به جایی که در آن هستید", "fw": "آوردن"},
+{"p": "v", "en": "to cause a state or feeling", "fa": "به وجود آوردن حالت یا احساس", "fw": "به‌وجود آوردن"}
+]},
+{"w": "broken", "ipa": "ˈbroʊ.kən", "m": [
+{"p": "adj", "en": "damaged and in pieces", "fa": "آسیب‌دیده و تکه‌تکه", "fw": "شکسته"},
+{"p": "adj", "en": "not working properly", "fa": "از کار افتاده", "fw": "خراب"}
+]},
+{"w": "broom", "ipa": "bruːm", "m": [
+{"p": "n", "en": "a long-handled brush for sweeping floors", "fa": "جاروی دسته‌دراز برای جارو کردن زمین", "fw": "جارو"}
+]},
+{"w": "brother", "ipa": "ˈbrʌð.ɚ", "m": [
+{"p": "n", "en": "a boy or man with the same parents as you", "fa": "پسر یا مردی که پدر و مادرش با شما یکی است", "fw": "برادر"}
+]},
+{"w": "brunch", "ipa": "brʌntʃ", "m": [
+{"p": "n", "en": "a late morning meal combining breakfast and lunch", "fa": "وعده‌ای دیرهنگام صبح که جای صبحانه و ناهار را می‌گیرد", "fw": "برنچ"}
+]},
+{"w": "brown", "ipa": "braʊn", "m": [
+{"p": "adj", "en": "having the color of coffee or earth", "fa": "به رنگ قهوه یا خاک", "fw": "قهوه‌ای"},
+{"p": "n", "en": "the color of coffee or earth", "fa": "رنگ قهوه یا خاک", "fw": "قهوه‌ای"}
+]},
+{"w": "brush", "ipa": "brʌʃ", "m": [
+{"p": "n", "en": "a tool with hairs used for cleaning or painting", "fa": "ابزاری با تارهایی برای نظافت یا نقاشی", "fw": "برس"},
+{"p": "v", "en": "to clean or tidy with a brush", "fa": "با برس تمیز یا مرتب کردن", "fw": "برس زدن"}
+]},
+{"w": "bubble", "ipa": "ˈbʌb.əl", "m": [
+{"p": "n", "en": "a ball of air or gas inside a liquid", "fa": "گویچه‌ی هوا یا گاز درون مایع", "fw": "حباب"},
+{"p": "v", "en": "to form bubbles", "fa": "حباب تولید کردن", "fw": "حباب زدن"}
+]},
+{"w": "bucket", "ipa": "ˈbʌk.ɪt", "m": [
+{"p": "n", "en": "an open container with a handle for carrying liquids", "fa": "ظرف باز دسته‌داری برای حمل مایعات", "fw": "سطل"}
+]},
+{"w": "budget", "ipa": "ˈbʌdʒ.ɪt", "m": [
+{"p": "n", "en": "the amount of money available for a purpose", "fa": "پولی که برای هدفی معین در دسترس است", "fw": "بودجه"},
+{"p": "v", "en": "to plan how money will be spent", "fa": "برنامه‌ریزی برای هزینه‌کرد پول", "fw": "بودجه‌بندی کردن"}
+]},
+{"w": "build", "ipa": "bɪld", "m": [
+{"p": "v", "en": "to make something by putting parts together", "fa": "ساختن چیزی از راه کنار هم گذاشتن اجزا", "fw": "ساختن"},
+{"p": "v", "en": "to develop something over time", "fa": "چیزی را در گذر زمان پدید آوردن و رشد دادن", "fw": "پدید آوردن"}
+]},
+{"w": "bunch", "ipa": "bʌntʃ", "m": [
+{"p": "n", "en": "a group of things of the same kind held together", "fa": "گروهی از چیزهای هم‌گونه که کنار هم بسته شده‌اند", "fw": "دسته"}
+]},
+{"w": "burger", "ipa": "ˈbɝː.ɡɚ", "m": [
+{"p": "n", "en": "a flat round cake of cooked meat in a bread roll", "fa": "قرص گوشت پخته در نان", "fw": "برگر"}
+]},
+{"w": "burn", "ipa": "bɝːn", "m": [
+{"p": "v", "en": "to damage or destroy something with fire", "fa": "نابود یا خراب کردن چیزی با آتش", "fw": "سوزاندن"},
+{"p": "v", "en": "to be on fire", "fa": "در حال سوختن بودن؛ آتش گرفتن", "fw": "سوختن"},
+{"p": "n", "en": "an injury caused by heat or fire", "fa": "آسیب پوستی ناشی از گرما یا آتش", "fw": "سوختگی"}
+]},
+{"w": "bury", "ipa": "ˈber.i", "m": [
+{"p": "v", "en": "to put a dead body in the ground", "fa": "در خاک نهفتن جنازه", "fw": "دفن کردن"},
+{"p": "v", "en": "to hide something under the ground", "fa": "چیزی را زیر خاک پنهان کردن", "fw": "پنهان کردن"}
+]},
+{"w": "bus", "ipa": "bʌs", "m": [
+{"p": "n", "en": "a large vehicle carrying many passengers on roads", "fa": "خودروی بزرگی که مسافران زیادی را جابه‌جا می‌کند", "fw": "اتوبوس"}
+]},
+{"w": "bush", "ipa": "bʊʃ", "m": [
+{"p": "n", "en": "a small plant with many woody branches", "fa": "گیاه کوتاهی با شاخه‌های چوبی فراوان", "fw": "بوته"}
+]},
+{"w": "business", "ipa": "ˈbɪz.nɪs", "m": [
+{"p": "n", "en": "the activity of buying and selling goods or services", "fa": "خرید و فروش کالا یا خدمات", "fw": "تجارت"},
+{"p": "n", "en": "a company or shop", "fa": "شرکت یا مغازه", "fw": "کسب‌وکار"}
+]},
+{"w": "busy", "ipa": "ˈbɪz.i", "m": [
+{"p": "adj", "en": "having a lot of work or things to do", "fa": "کارها یا مشغله‌ی زیادی داشتن", "fw": "مشغول"}
+]},
+{"w": "but", "ipa": "bʌt", "m": [
+{"p": "conj", "en": "used to introduce a contrast", "fa": "برای نشان‌دادن تقابل با گفته‌ی پیشین", "fw": "اما"},
+{"p": "prep", "en": "except; apart from", "fa": "جز؛ مگر", "fw": "جز"}
+]},
+{"w": "butter", "ipa": "ˈbʌt.ɚ", "m": [
+{"p": "n", "en": "a soft yellow food made from cream", "fa": "خوراک نرم زردرنگی که از خامه درست می‌شود", "fw": "کره"}
+]},
+{"w": "butterfly", "ipa": "ˈbʌt.ɚ.flaɪ", "m": [
+{"p": "n", "en": "an insect with large colorful wings", "fa": "حشره‌ای با بال‌های بزرگ و رنگارنگ", "fw": "پروانه"}
+]},
+{"w": "button", "ipa": "ˈbʌt.ən", "m": [
+{"p": "n", "en": "a small round fastener for clothes", "fa": "جسم کوچک گردی برای بستن لباس", "fw": "دکمه"},
+{"p": "n", "en": "a small part of a machine that you press", "fa": "بخش کوچکی از دستگاه که آن را فشار می‌دهید", "fw": "دکمه"}
+]},
+{"w": "buy", "ipa": "baɪ", "m": [
+{"p": "v", "en": "to get something by paying money for it", "fa": "به‌دست آوردن چیزی در برابر پرداخت پول", "fw": "خریدن"}
+]}
+]
+}

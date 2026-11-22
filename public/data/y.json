@@ -1,0 +1,32 @@
+{
+  "y": [
+    {"w": "yacht", "ipa": "jɑːt", "m": [{"p": "n", "en": "a large boat used for pleasure trips or racing", "fa": "قایق بزرگ بادبانی یا موتوری برای تفریح یا مسابقه", "fw": "قایق تفریحی"}]},
+    {"w": "yank", "ipa": "jæŋk", "m": [{"p": "v", "en": "to pull something suddenly and forcefully", "fa": "ناگهانی و با نیروی زیاد کشیدن چیزی", "fw": "محکم کشیدن"}]},
+    {"w": "yard", "ipa": "jɑːrd", "m": [{"p": "n", "en": "an area of ground next to a house", "fa": "زمینی کنار خانه، اغلب با چمن", "fw": "حیاط"}, {"p": "n", "en": "a unit of length equal to three feet", "fa": "واحد طول برابر سه فوت (حدود ۹۱ سانتی‌متر)", "fw": "یارد"}]},
+    {"w": "yardstick", "ipa": "ˈjɑːrd.stɪk", "m": [{"p": "n", "en": "a stick one yard long used for measuring", "fa": "چوب اندازه‌گیری به طول یک یارد", "fw": "خط‌کش"}, {"p": "n", "en": "a standard used for comparing or judging", "fa": "معیاری برای مقایسه یا قضاوت", "fw": "معیار"}]},
+    {"w": "yawn", "ipa": "jɑːn", "m": [{"p": "v", "en": "to open your mouth wide when tired or bored", "fa": "باز کردن ناخودآگاه دهان هنگام خستگی یا کسالت", "fw": "خمیازه کشیدن"}, {"p": "n", "en": "an act of yawning", "fa": "یک بار خمیازه کشیدن", "fw": "خمیازه"}]},
+    {"w": "yeah", "ipa": "jæ", "m": [{"p": "interj", "en": "an informal way of saying yes", "fa": "شکل محاوره‌ای کلمه «بله»", "fw": "آره"}]},
+    {"w": "year", "ipa": "jɪr", "m": [{"p": "n", "en": "a period of twelve months", "fa": "دوره‌ای دوازده‌ماهه", "fw": "سال"}, {"p": "n", "en": "a period connected with an event or activity", "fa": "مدتی که به رویداد یا فعالیت مشخصی مربوط است", "fw": "سال"}]},
+    {"w": "yearbook", "ipa": "ˈjɪr.bʊk", "m": [{"p": "n", "en": "a book a school publishes each year with photos of students", "fa": "کتابی که مدرسه هر سال با عکس‌ها و خاطرات دانش‌آموزان منتشر می‌کند", "fw": "کتاب سال"}]},
+    {"w": "yearly", "ipa": "ˈjɪr.li", "m": [{"p": "adj", "en": "happening once a year or every year", "fa": "رخ دادن هر سال یا سالی یک بار", "fw": "سالانه"}, {"p": "adv", "en": "every year; once a year", "fa": "هر ساله؛ سالی یک بار", "fw": "سالانه"}]},
+    {"w": "yearn", "ipa": "jɝːn", "m": [{"p": "v", "en": "to want something very strongly", "fa": "داشتن اشتیاقی شدید به چیزی", "fw": "اشتیاق داشتن"}]},
+    {"w": "yeast", "ipa": "jiːst", "m": [{"p": "n", "en": "a substance that makes dough rise in bread making", "fa": "ماده‌ای که در پخت نان خمیر را پف می‌دهد", "fw": "مخمر"}]},
+    {"w": "yell", "ipa": "jɛl", "m": [{"p": "v", "en": "to shout loudly, often because of anger", "fa": "بلند فریاد زدن، اغلب از سر عصبانیت", "fw": "فریاد زدن"}, {"p": "n", "en": "a loud shout", "fa": "فریاد بلند", "fw": "فریاد"}]},
+    {"w": "yellow", "ipa": "ˈjɛl.oʊ", "m": [{"p": "adj", "en": "having the color of the sun or lemons", "fa": "به رنگ خورشید یا لیمو", "fw": "زرد"}, {"p": "n", "en": "the color yellow", "fa": "رنگ زرد", "fw": "زرد"}]},
+    {"w": "yes", "ipa": "jɛs", "m": [{"p": "adv", "en": "used to give a positive answer or agree", "fa": "برای پاسخ مثبت یا ابراز موافقت به کار می‌رود", "fw": "بله"}, {"p": "interj", "en": "used to show excitement or pleasure", "fa": "برای ابراز هیجان یا خشنودی به کار می‌رود", "fw": "بله"}]},
+    {"w": "yesterday", "ipa": "ˈjɛs.tɚ.deɪ", "m": [{"p": "n", "en": "the day before today", "fa": "روز پیش از امروز", "fw": "دیروز"}, {"p": "adv", "en": "on the day before today", "fa": "در روز پیش از امروز", "fw": "دیروز"}]},
+    {"w": "yet", "ipa": "jɛt", "m": [{"p": "adv", "en": "up to now, in negatives and questions", "fa": "تاکنون؛ تا این لحظه (در جملات منفی و پرسشی)", "fw": "هنوز"}, {"p": "adv", "en": "still; even (used for emphasis)", "fa": "باز هم؛ حتی (برای تأکید)", "fw": "باز هم"}, {"p": "conj", "en": "but; despite that", "fa": "اما؛ با این حال", "fw": "اما"}]},
+    {"w": "yield", "ipa": "jiːld", "m": [{"p": "v", "en": "to produce or provide something", "fa": "تولید کردن یا به دست دادن چیزی", "fw": "تولید کردن"}, {"p": "n", "en": "the amount of something produced", "fa": "میزان چیزی که تولید می‌شود", "fw": "بازده"}, {"p": "v", "en": "to give way to someone or something", "fa": "راه دادن؛ کوتاه آمدن", "fw": "راه دادن"}]},
+    {"w": "yoga", "ipa": "ˈjoʊ.ɡə", "m": [{"p": "n", "en": "a system of physical and mental exercises from India", "fa": "مجموعه‌ای از تمرین‌های بدنی و ذهنی برخاسته از هند", "fw": "یوگا"}]},
+    {"w": "yogurt", "ipa": "ˈjoʊ.ɡɚt", "m": [{"p": "n", "en": "a thick slightly sour food made from milk", "fa": "خوراک غلیظ و کمی ترش که از شیر تهیه می‌شود", "fw": "ماست"}]},
+    {"w": "yolk", "ipa": "joʊk", "m": [{"p": "n", "en": "the yellow middle part of an egg", "fa": "بخش زرد وسط تخم‌مرغ", "fw": "زرده"}]},
+    {"w": "you", "ipa": "juː", "m": [{"p": "pron", "en": "the person or people being spoken to", "fa": "شخص یا اشخاصی که با آن‌ها سخن می‌گویی", "fw": "شما"}, {"p": "pron", "en": "used to refer to people in general", "fa": "برای اشاره به مردم به‌طور کلی به کار می‌رود", "fw": "آدم"}]},
+    {"w": "young", "ipa": "jʌŋ", "m": [{"p": "adj", "en": "having lived or existed for only a short time", "fa": "دارای سن کم؛ در ابتدای زندگی", "fw": "جوان"}, {"p": "n", "en": "young people considered as a group", "fa": "جوانان به‌عنوان یک گروه", "fw": "جوانان"}]},
+    {"w": "youngster", "ipa": "ˈjʌŋ.stɚ", "m": [{"p": "n", "en": "a child or young person", "fa": "کودک یا نوجوان", "fw": "نوجوان"}]},
+    {"w": "your", "ipa": "jʊr", "m": [{"p": "pron", "en": "belonging to or related to the person spoken to", "fa": "متعلق به یا مربوط به مخاطب", "fw": "شما"}]},
+    {"w": "yours", "ipa": "jʊrz", "m": [{"p": "pron", "en": "that which belongs to you", "fa": "آنچه به تو تعلق دارد", "fw": "مال شما"}]},
+    {"w": "yourself", "ipa": "jərˈsɛlf", "m": [{"p": "pron", "en": "the reflexive form of you", "fa": "شکل انعکاسی ضمیر «you» (خودت، خودتان)", "fw": "خودتان"}, {"p": "pron", "en": "your usual or true self", "fa": "خودِ همیشگی‌ات؛ همان که هستی", "fw": "خودت"}]},
+    {"w": "youth", "ipa": "juːθ", "m": [{"p": "n", "en": "the period of life when you are young", "fa": "دوره جوانی زندگی", "fw": "جوانی"}, {"p": "n", "en": "a young person, especially a teenage boy", "fa": "جوان، به‌ویژه پسر نوجوان", "fw": "جوان"}, {"p": "n", "en": "young people in general", "fa": "جوانان به‌طور کلی", "fw": "جوانان"}]},
+    {"w": "yummy", "ipa": "ˈjʌm.i", "m": [{"p": "adj", "en": "tasting very good (informal)", "fa": "بسیار خوشمزه (محاوره‌ای)", "fw": "خوشمزه"}]}
+  ]
+}

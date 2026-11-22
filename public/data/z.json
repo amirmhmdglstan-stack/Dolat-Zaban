@@ -1,0 +1,18 @@
+{
+  "z": [
+    {"w": "zeal", "ipa": "ziːl", "m": [{"p": "n", "en": "great energy and enthusiasm for something", "fa": "انرژی و شور فراوان برای کاری", "fw": "شور"}]},
+    {"w": "zebra", "ipa": "ˈziː.brə", "m": [{"p": "n", "en": "an African animal like a horse with black and white stripes", "fa": "حیوان آفریقایی شبیه اسب با نوارهای سیاه‌وسفید", "fw": "گورخر"}]},
+    {"w": "zero", "ipa": "ˈzɪr.oʊ", "m": [{"p": "num", "en": "the number 0", "fa": "عدد صفر", "fw": "صفر"}, {"p": "n", "en": "nothing at all", "fa": "اصلاً هیچ", "fw": "هیچ"}]},
+    {"w": "zest", "ipa": "zɛst", "m": [{"p": "n", "en": "great enthusiasm and excitement", "fa": "شور و هیجان فراوان", "fw": "شور"}, {"p": "n", "en": "the outer skin of a lemon or orange used for flavor", "fa": "پوست بیرونی لیمو یا پرتقال که برای طعم‌دهی به کار می‌رود", "fw": "پوست مرکبات"}]},
+    {"w": "zigzag", "ipa": "ˈzɪɡ.zæɡ", "m": [{"p": "n", "en": "a line with sharp turns left and right", "fa": "خطی که با پیچ‌های تند به چپ و راست می‌رود", "fw": "زیگزاگ"}, {"p": "adj", "en": "having sharp turns from side to side", "fa": "دارای پیچ‌های تند به چپ و راست", "fw": "زیگزاگی"}, {"p": "v", "en": "to move forward with sharp side turns", "fa": "با پیچ‌های تند به چپ و راست جلو رفتن", "fw": "زیگزاگ رفتن"}]},
+    {"w": "zinc", "ipa": "zɪŋk", "m": [{"p": "n", "en": "a hard bluish-white metal used to protect iron", "fa": "فلز سختی سفید مایل به آبی که برای محافظت آهن به کار می‌رود", "fw": "روی"}]},
+    {"w": "zip", "ipa": "zɪp", "m": [{"p": "v", "en": "to close or open with a zipper", "fa": "بستن یا باز کردن با زیپ", "fw": "زیپ کردن"}, {"p": "v", "en": "to move very quickly", "fa": "بسیار تند حرکت کردن", "fw": "تند رفتن"}, {"p": "n", "en": "a zipper (mainly British)", "fa": "زیپ (عمدتاً بریتانیایی)", "fw": "زیپ"}]},
+    {"w": "zipper", "ipa": "ˈzɪp.ɚ", "m": [{"p": "n", "en": "a fastener with two rows of teeth used on clothes and bags", "fa": "وسیله‌ای دندانه‌دار برای بستن لباس، کیف و مانند آن", "fw": "زیپ"}]},
+    {"w": "zodiac", "ipa": "ˈzoʊ.di.æk", "m": [{"p": "n", "en": "the area of the sky divided into twelve signs used in astrology", "fa": "ناحیه‌ای از آسمان که در طالع‌بینی به دوازده نشانه تقسیم می‌شود", "fw": "بروج"}]},
+    {"w": "zombie", "ipa": "ˈzɑːm.bi", "m": [{"p": "n", "en": "a dead person who comes back to life in stories and movies", "fa": "مُرده‌ای که در قصه‌ها و فیلم‌ها دوباره زنده می‌شود", "fw": "زامبی"}, {"p": "n", "en": "a person who seems very tired and lifeless", "fa": "کسی که بسیار خسته و بی‌رمق به نظر می‌رسد", "fw": "بی‌رمق"}]},
+    {"w": "zone", "ipa": "zoʊn", "m": [{"p": "n", "en": "an area, especially one with a particular purpose", "fa": "ناحیه یا محدوده‌ای، به‌ویژه با هدف یا کاربرد ویژه", "fw": "منطقه"}]},
+    {"w": "zoo", "ipa": "zuː", "m": [{"p": "n", "en": "a place where animals are kept for people to see", "fa": "جایی که در آن حیوانات را برای بازدید مردم نگه می‌دارند", "fw": "باغ‌وحش"}]},
+    {"w": "zoom", "ipa": "zuːm", "m": [{"p": "v", "en": "to move or go very quickly", "fa": "بسیار تند رفتن یا حرکت کردن", "fw": "تند رفتن"}, {"p": "v", "en": "to make a camera image look bigger or smaller", "fa": "با دوربین تصویر را بزرگ‌تر یا کوچک‌تر نشان دادن", "fw": "زوم کردن"}, {"p": "phr", "en": "zoom in: to make an image look bigger and closer", "fa": "«بزرگ‌نمایی کردن»: بزرگ‌تر و نزدیک‌تر نشان دادن تصویر", "fw": "بزرگ‌نمایی کردن"}]},
+    {"w": "zucchini", "ipa": "zuːˈkiː.ni", "m": [{"p": "n", "en": "a long green vegetable similar to a cucumber", "fa": "سبزی دراز و سبز شبیه خیار", "fw": "کدو سبز"}]}
+  ]
+}
