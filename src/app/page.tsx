@@ -3,6 +3,7 @@
 import { useAppInit, useT } from '@/components/app/use-app'
 import { AppHeader } from '@/components/app/AppHeader'
 import { SideMenu } from '@/components/app/SideMenu'
+import { BottomNav } from '@/components/app/BottomNav'
 import { HomeView } from '@/components/app/HomeView'
 import { DictionaryView } from '@/components/app/DictionaryView'
 import { TranslatorView } from '@/components/app/TranslatorView'
@@ -24,7 +25,7 @@ export default function Page() {
   return (
     <div className="app-shell flex min-h-dvh flex-col bg-background">
       <AppHeader />
-      <main className="mx-auto w-full max-w-xl flex-1">
+      <main className="mx-auto w-full max-w-xl flex-1 pb-24">
         <AnimatePresence mode="wait">
           <motion.div
             key={view}
@@ -43,6 +44,7 @@ export default function Page() {
           </motion.div>
         </AnimatePresence>
       </main>
+      <BottomNav />
       <SideMenu />
       <WordSheet />
       <UpdateCard />

@@ -3,6 +3,7 @@ import type { Lang } from './types'
 const en = {
   appName: 'Dolat Zaban',
   appTagline: 'English-Persian dictionary and translator',
+  home: 'Home',
   back: 'Back',
   close: 'Close',
   cancel: 'Cancel',
@@ -169,6 +170,7 @@ export type Strings = typeof en
 const fa: Strings = {
   appName: 'دولت زبان',
   appTagline: 'واژه‌نامه و مترجم انگلیسی - فارسی',
+  home: 'خانه',
   back: 'بازگشت',
   close: 'بستن',
   cancel: 'انصراف',
