@@ -7,6 +7,10 @@ name: Publish dictionary pack
 
 on:
   workflow_dispatch:
+  # bootstrap: the first run can be triggered by adding the "publish-pack"
+  # label to a pull request, before this file lives on the default branch
+  pull_request:
+    types: [labeled]
 
 permissions:
   contents: write
@@ -14,6 +18,7 @@ permissions:
 jobs:
   build-pack:
     name: Build and upload pack
+    if: github.event_name == 'workflow_dispatch' || github.event.label.name == 'publish-pack'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
