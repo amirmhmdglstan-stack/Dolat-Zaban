@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: 'English-Persian dictionary and translator',
   applicationName: 'Dolat Zaban',
   icons: {
-    icon: '/icon.png',
+    icon: [{ url: '/icon-192.png', sizes: '192x192', type: 'image/png' }, { url: '/icon.png', sizes: '512x512', type: 'image/png' }],
     apple: '/icon.png',
   },
   manifest: '/manifest.webmanifest',
@@ -30,8 +30,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: 'cover',
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#131a2b' },
+    { media: '(prefers-color-scheme: light)', color: '#057855' },
+    { media: '(prefers-color-scheme: dark)', color: '#04412f' },
   ],
 }
 

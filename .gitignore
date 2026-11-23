@@ -43,3 +43,9 @@ android/app/build/
 android/local.properties
 android/.idea/
 android/captures/
+
+# downloaded source datasets / generated packs (not part of the app)
+/tmp-data/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
