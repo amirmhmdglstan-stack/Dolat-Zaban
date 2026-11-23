@@ -49,3 +49,4 @@ android/captures/
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
+public/data/dict-ext.json.gz
