@@ -175,6 +175,20 @@ export async function extInstalled(): Promise<boolean> {
   return Boolean(meta)
 }
 
+/** binary search over the sorted index; returns -1 when missing */
+function findWord(index: ExtIndex, q: string): number {
+  let lo = 0
+  let hi = index.w.length - 1
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1
+    const v = index.w[mid]
+    if (v === q) return mid
+    if (v < q) lo = mid + 1
+    else hi = mid - 1
+  }
+  return -1
+}
+
 /** Full entry for one word (or its headword via inflected form). */
 export async function extLookup(word: string): Promise<WordEntry | null> {
   const got = await ensureIndex()
@@ -183,8 +197,7 @@ export async function extLookup(word: string): Promise<WordEntry | null> {
   if (!q) return null
   let head = q
   let via: string | undefined
-  const direct = got.index.w.indexOf(q)
-  if (direct < 0) {
+  if (findWord(got.index, q) < 0) {
     const alias = got.aliases.get(q)
     if (!alias) return null
     head = alias
@@ -251,7 +264,7 @@ export async function extSearch(rawQuery: string, hasFa: boolean, limit = 40): P
     for (const [alias, head] of aliases) {
       if (added >= 10) break
       if (alias.startsWith(q) && alias !== q) {
-        const i = index.w.indexOf(head)
+        const i = findWord(index, head)
         if (i >= 0 && !starts.some((e) => e.w === head)) {
           starts.push({ ...liteEntry(index, i), via: alias })
           added++
