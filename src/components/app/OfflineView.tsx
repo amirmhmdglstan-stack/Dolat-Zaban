@@ -105,8 +105,11 @@ export function OfflineView() {
   }, [])
 
   useEffect(() => {
-    refresh()
-    getVoices().then((v) => setVoices(v.filter((x) => x.lang.toLowerCase().startsWith('en') || x.lang.toLowerCase().startsWith('fa'))))
+    const id = setTimeout(() => {
+      refresh()
+      getVoices().then((v) => setVoices(v.filter((x) => x.lang.toLowerCase().startsWith('en') || x.lang.toLowerCase().startsWith('fa'))))
+    }, 0)
+    return () => clearTimeout(id)
   }, [refresh])
 
   const downloadAll = async () => {

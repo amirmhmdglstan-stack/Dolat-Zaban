@@ -17,7 +17,7 @@ import { Toaster } from 'sonner'
 
 export default function Page() {
   useAppInit()
-  const { t } = useT()
+  const { t, isFa } = useT()
   const view = useUi((s) => s.view)
   const mode = useSettings((s) => s.mode)
 
@@ -49,7 +49,7 @@ export default function Page() {
       <Toaster
         position="top-center"
         theme={mode === 'dark' ? 'dark' : 'light'}
-        toastOptions={{ className: 'font-en' }}
+        toastOptions={{ className: isFa ? 'font-fa' : 'font-en' }}
       />
     </div>
   )

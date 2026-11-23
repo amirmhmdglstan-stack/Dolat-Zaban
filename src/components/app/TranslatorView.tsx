@@ -80,6 +80,7 @@ export function TranslatorView() {
     if (output.provider === 'google') return t.providerGoogle
     if (output.provider === 'mymemory') return t.providerMyMemory
     if (output.provider === 'offline') return t.providerOffline
+    if (output.provider === 'history') return t.providerHistory
     return t.providerServer
   }, [output, t])
 
@@ -239,7 +240,7 @@ export function TranslatorView() {
                     onClick={() => {
                       setDir(h.sl === 'en' ? 'en2fa' : 'fa2en')
                       setInput(h.source)
-                      setOutput({ text: h.result, provider: 'server' })
+                      setOutput({ text: h.result, provider: 'history' })
                       window.scrollTo({ top: 0, behavior: 'smooth' })
                     }}
                     className="w-full space-y-1 px-4 py-3 text-start transition-colors hover:bg-accent"

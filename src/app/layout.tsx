@@ -1,16 +1,21 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Vazirmatn } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 
-const inter = Inter({
-  subsets: ['latin'],
+// self-hosted (offline builds, no Google Fonts dependency at build time)
+const inter = localFont({
+  src: '../fonts/inter-latin.woff2',
   variable: '--font-en',
+  weight: '100 900',
+  style: 'normal',
   display: 'swap',
 })
 
-const vazir = Vazirmatn({
-  subsets: ['arabic'],
+const vazir = localFont({
+  src: '../fonts/vazirmatn-arabic.woff2',
   variable: '--font-fa',
+  weight: '100 900',
+  style: 'normal',
   display: 'swap',
 })
 

@@ -3,6 +3,7 @@ productName: Dolat Zaban
 directories:
   output: dist
   buildResources: build
+compression: maximum
 files:
   - electron/**/*
   - package.json

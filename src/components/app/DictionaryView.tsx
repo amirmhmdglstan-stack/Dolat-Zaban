@@ -130,10 +130,7 @@ export function DictionaryView() {
   }, [])
 
   useEffect(() => {
-    if (!dictQuery.trim()) {
-      setResults(null)
-      return
-    }
+    if (!dictQuery.trim()) return
     if (debounceRef.current) clearTimeout(debounceRef.current)
     debounceRef.current = setTimeout(() => runSearch(dictQuery), 300)
     return () => {

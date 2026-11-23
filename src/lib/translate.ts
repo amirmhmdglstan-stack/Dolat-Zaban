@@ -6,7 +6,10 @@ import type { TranslationHistoryItem } from './types'
 
 export const MAX_TRANSLATE_CHARS = 5000
 
-export type TranslateProvider = 'google' | 'mymemory' | 'server' | 'offline'
+// set at build time: static exports (Android/Windows) have no /api routes
+const IS_STATIC = process.env.NEXT_PUBLIC_STATIC === '1'
+
+export type TranslateProvider = 'google' | 'mymemory' | 'server' | 'offline' | 'history'
 
 export interface TranslateResult {
   text: string
@@ -113,16 +116,14 @@ export async function translateText(text: string, sl: 'en' | 'fa', tl: 'en' | 'f
 
   if (!isOnline()) {
     const cached = await findInHistory(trimmed, sl, tl)
-    if (cached) return { text: cached, provider: 'server' }
+    if (cached) return { text: cached, provider: 'history' }
     const offline = await translateOfflineWordByWord(trimmed, sl === 'en' ? 'en2fa' : 'fa2en')
     return { text: offline, provider: 'offline' }
   }
 
-  const providers: [TranslateProvider, () => Promise<string>][] = [
-    ['server', () => viaServer(text, sl, tl)],
-    ['google', () => viaGoogle(text, sl, tl)],
-    ['mymemory', () => viaMyMemory(trimmed, sl, tl)],
-  ]
+  const providers: [TranslateProvider, () => Promise<string>][] = []
+  if (!IS_STATIC) providers.push(['server', () => viaServer(text, sl, tl)])
+  providers.push(['google', () => viaGoogle(text, sl, tl)], ['mymemory', () => viaMyMemory(trimmed, sl, tl)])
   for (const [provider, run] of providers) {
     try {
       const result = await run()
@@ -141,7 +142,7 @@ export async function translateText(text: string, sl: 'en' | 'fa', tl: 'en' | 'f
   }
 
   const cached = await findInHistory(trimmed, sl, tl)
-  if (cached) return { text: cached, provider: 'server' }
+  if (cached) return { text: cached, provider: 'history' }
   const offline = await translateOfflineWordByWord(trimmed, sl === 'en' ? 'en2fa' : 'fa2en')
   return { text: offline, provider: 'offline' }
 }

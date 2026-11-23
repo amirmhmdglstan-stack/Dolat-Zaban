@@ -4,11 +4,40 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useT } from './use-app'
 import { APP_VERSION } from '@/lib/update'
+import { EXT_PACK } from '@/lib/ext-pack'
+import { fmt } from '@/lib/i18n'
 import { Button } from '@/components/ui/button'
-import { Mail, Heart } from 'lucide-react'
+import { Mail, Heart, Database, BookMarked, Volume2, Globe } from 'lucide-react'
+
+const SOURCES = [
+  {
+    icon: BookMarked,
+    en: 'Full dictionary: English-Persian Dictionary (MIT) by H. Yazdani & shahabahreini',
+    fa: 'واژه‌نامهٔ کامل: فرهنگ انگلیسی-فارسی (MIT) اثر اچ. یزدانی و شاهبهری',
+    url: 'https://github.com/shahabahreini/English-Persian-Dictionary',
+  },
+  {
+    icon: Database,
+    en: 'Word database: english-persian-dictionary-dataset by shirin-manzari',
+    fa: 'پایگاه واژگان: english-persian-dictionary-dataset اثر shirin-manzari',
+    url: 'https://github.com/shirin-manzari/english-persian-dictionary-dataset',
+  },
+  {
+    icon: Volume2,
+    en: 'Pronunciations: CMU Pronouncing Dictionary (BSD)',
+    fa: 'تلفظ‌ها: فرهنگ تلفظ دانشگاه کارنگی ملون (BSD)',
+    url: 'https://github.com/cmusphinx/cmudict',
+  },
+  {
+    icon: Globe,
+    en: 'Online definitions: The Free Dictionary API',
+    fa: 'تعریف‌های آنلاین: The Free Dictionary API',
+    url: 'https://dictionaryapi.dev',
+  },
+]
 
 export function AboutView() {
-  const { t } = useT()
+  const { t, lang } = useT()
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -44,9 +73,30 @@ export function AboutView() {
             </a>
           </Button>
         </div>
-
-        <p className="font-en mt-8 text-[11px] text-muted-foreground">v{APP_VERSION}</p>
       </div>
+
+      <div className="mt-4 rounded-3xl border border-border/70 bg-card px-5 py-5">
+        <h2 className="text-[13px] font-semibold uppercase tracking-wide text-muted-foreground">{t.dataSources}</h2>
+        <ul className="mt-3 space-y-3">
+          {SOURCES.map((s) => (
+            <li key={s.url}>
+              <a
+                href={s.url}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-start gap-2.5 text-[13px] leading-relaxed text-muted-foreground transition-colors hover:text-primary"
+              >
+                <s.icon className="mt-0.5 h-4 w-4 shrink-0 text-primary/70" />
+                <span>{lang === 'fa' ? s.fa : s.en}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <p className="font-en mt-6 text-center text-[11px] text-muted-foreground">
+        v{APP_VERSION} · {fmt(t.wordsCount, { n: EXT_PACK.words })}+
+      </p>
     </motion.div>
   )
 }
