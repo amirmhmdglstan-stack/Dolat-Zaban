@@ -3,6 +3,7 @@
 import { useAppInit, useT } from '@/components/app/use-app'
 import { AppHeader } from '@/components/app/AppHeader'
 import { SideMenu } from '@/components/app/SideMenu'
+import { BottomNav } from '@/components/app/BottomNav'
 import { HomeView } from '@/components/app/HomeView'
 import { DictionaryView } from '@/components/app/DictionaryView'
 import { TranslatorView } from '@/components/app/TranslatorView'
@@ -17,14 +18,14 @@ import { Toaster } from 'sonner'
 
 export default function Page() {
   useAppInit()
-  const { t } = useT()
+  const { t, isFa } = useT()
   const view = useUi((s) => s.view)
   const mode = useSettings((s) => s.mode)
 
   return (
     <div className="app-shell flex min-h-dvh flex-col bg-background">
       <AppHeader />
-      <main className="mx-auto w-full max-w-xl flex-1">
+      <main className="mx-auto w-full max-w-xl flex-1 pb-24">
         <AnimatePresence mode="wait">
           <motion.div
             key={view}
@@ -43,13 +44,14 @@ export default function Page() {
           </motion.div>
         </AnimatePresence>
       </main>
+      <BottomNav />
       <SideMenu />
       <WordSheet />
       <UpdateCard />
       <Toaster
         position="top-center"
         theme={mode === 'dark' ? 'dark' : 'light'}
-        toastOptions={{ className: 'font-en' }}
+        toastOptions={{ className: isFa ? 'font-fa' : 'font-en' }}
       />
     </div>
   )

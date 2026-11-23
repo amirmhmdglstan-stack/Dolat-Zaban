@@ -41,7 +41,7 @@ export function useAppInit() {
 
   const palette = useSettings((s) => s.palette)
   useEffect(() => {
-    if (palette === 'blue') delete document.documentElement.dataset.theme
+    if (palette === 'green') delete document.documentElement.dataset.theme
     else document.documentElement.dataset.theme = palette
   }, [palette])
 

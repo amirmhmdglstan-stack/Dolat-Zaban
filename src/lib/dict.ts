@@ -1,7 +1,8 @@
 'use client'
 
-import type { WordEntry } from './types'
+import type { Meaning, WordEntry } from './types'
 import { idbGet, idbSet } from './idb'
+import { extLetter, extLookup, extSearch, extWordMap, type ExtSearchResults } from './ext'
 
 export const LETTERS = 'abcdefghijklmnopqrstuvwxyz'
 
@@ -10,6 +11,7 @@ let lettersIndex: Record<string, number> | null = null
 let allLoaded = false
 let loadingAll: Promise<void> | null = null
 let faIndex: Map<string, string> | null = null
+let enWordMap: Map<string, string> | null = null
 
 function hasFa(s: string): boolean {
   return /[\u0621-\u064A\u0670-\u06D3\u200C]/.test(s)
@@ -75,55 +77,103 @@ export async function cachedLetters(): Promise<string[]> {
   return keys.map(String).sort()
 }
 
+/** Core words of a letter merged with the extended pack (for browsing). */
+export async function loadLetterFull(letter: string): Promise<WordEntry[]> {
+  const core = await loadLetter(letter).catch(() => [] as WordEntry[])
+  const extra = await extLetter(letter).catch(() => [] as WordEntry[])
+  if (!extra.length) return core
+  const seen = new Set(core.map((w) => w.w))
+  return [...core, ...extra.filter((w) => !seen.has(w.w))]
+}
+
+export function mergeMeanings(core: Meaning[], extra: Meaning[], max = 4): Meaning[] {
+  const seen = new Set(core.map((m) => m.fw.trim()).filter(Boolean))
+  const out = [...core]
+  for (const m of extra) {
+    const key = m.fw.trim()
+    if (!key || seen.has(key)) continue
+    seen.add(key)
+    out.push(m)
+    if (out.length >= core.length + max) break
+  }
+  return out
+}
+
 export async function getWordEntry(word: string): Promise<WordEntry | null> {
-  const l = word.trim().toLowerCase()[0]
-  if (!l || !LETTERS.includes(l)) return null
-  const words = await loadLetter(l)
-  return words.find((w) => w.w === word.trim().toLowerCase()) ?? null
+  const q = word.trim().toLowerCase()
+  if (!q) return null
+  const l = q[0]
+  let core: WordEntry | null = null
+  if (LETTERS.includes(l)) {
+    const words = await loadLetter(l)
+    core = words.find((w) => w.w === q) ?? null
+  }
+  const extEntry = await extLookup(q).catch(() => null)
+  if (core && extEntry) {
+    return {
+      ...core,
+      ipa: core.ipa || extEntry.ipa,
+      al: [...new Set([...(core.al ?? []), ...(extEntry.al ?? [])])].slice(0, 8),
+      m: mergeMeanings(core.m, extEntry.m),
+    }
+  }
+  return core ?? extEntry
 }
 
 export interface SearchResults {
   starts: WordEntry[]
   contains: WordEntry[]
   meanings: WordEntry[]
+  ext: ExtSearchResults | null
 }
 
 export async function searchDictionary(rawQuery: string): Promise<SearchResults> {
   const q = rawQuery.trim().toLowerCase()
-  if (!q) return { starts: [], contains: [], meanings: [] }
+  if (!q) return { starts: [], contains: [], meanings: [], ext: null }
   await ensureAllLoaded()
   const all: WordEntry[] = []
   for (const l of LETTERS) {
     const cached = indexCache.get(l)
     if (cached) all.push(...cached)
   }
-  if (hasFa(q)) {
+
+  const fa = hasFa(q)
+
+  const starts: WordEntry[] = []
+  const contains: WordEntry[] = []
+  const meanings: WordEntry[] = []
+
+  if (fa) {
     const exact: WordEntry[] = []
     const includes: WordEntry[] = []
     for (const w of all) {
       let strength = 0
       for (const m of w.m) {
         const fw = m.fw.replace(/\u200C/g, ' ')
-        if (fw === q) strength = 3
-        else if (fw.startsWith(q)) strength = Math.max(strength, 2)
-        else if (fw.includes(q)) strength = Math.max(strength, 1)
-        else if (m.fa.includes(q)) strength = Math.max(strength, 1)
+        if (fw === q) {
+          strength = 3
+        } else if (strength < 3 && fw.startsWith(q)) {
+          strength = Math.max(strength, 2)
+        } else if (strength < 2 && (fw.includes(q) || m.fa.includes(q))) {
+          strength = Math.max(strength, 1)
+        }
         if (strength === 3) break
       }
       if (strength === 3) exact.push(w)
       else if (strength > 0) includes.push(w)
     }
-    return { starts: [], contains: [], meanings: [...exact, ...includes] }
+    meanings.push(...exact, ...includes)
+  } else {
+    for (const w of all) {
+      if (w.w.startsWith(q)) starts.push(w)
+      else if (w.w.includes(q)) contains.push(w)
+    }
+    starts.sort((a, b) => a.w.localeCompare(b.w))
+    contains.sort((a, b) => a.w.localeCompare(b.w))
   }
-  const starts: WordEntry[] = []
-  const contains: WordEntry[] = []
-  for (const w of all) {
-    if (w.w.startsWith(q)) starts.push(w)
-    else if (w.w.includes(q)) contains.push(w)
-  }
-  starts.sort((a, b) => a.w.localeCompare(b.w))
-  contains.sort((a, b) => a.w.localeCompare(b.w))
-  return { starts, contains, meanings: [] }
+
+  const ext = await extSearch(rawQuery, fa).catch(() => null)
+  return { starts, contains, meanings, ext }
 }
 
 function hashStr(s: string): number {
@@ -177,19 +227,43 @@ async function buildFaIndex(): Promise<Map<string, string>> {
       }
     }
   }
+  const extMap = await extWordMap().catch(() => null)
+  if (extMap) {
+    for (const [word, fw] of extMap) {
+      const key = normalizeFa(fw)
+      if (key && !map.has(key)) map.set(key, word)
+    }
+  }
   faIndex = map
+  return map
+}
+
+async function buildEnWordMap(): Promise<Map<string, string>> {
+  if (enWordMap) return enWordMap
+  await ensureAllLoaded()
+  const map = new Map<string, string>()
+  for (const l of LETTERS) {
+    const words = indexCache.get(l)
+    if (!words) continue
+    for (const w of words) {
+      const fw = w.m[0]?.fw
+      if (fw && !map.has(w.w)) map.set(w.w, fw)
+    }
+  }
+  const extMap = await extWordMap().catch(() => null)
+  if (extMap) {
+    for (const [word, fw] of extMap) {
+      if (fw && !map.has(word)) map.set(word, fw)
+    }
+  }
+  enWordMap = map
   return map
 }
 
 export async function translateOfflineWordByWord(text: string, dir: 'en2fa' | 'fa2en'): Promise<string> {
   const tokens = text.split(/([\s.,!?;:"'()[\]{}\-]+)/)
   if (dir === 'en2fa') {
-    const words = await loadAllLettersSilent()
-    const wordMap = new Map<string, string>()
-    for (const w of words) {
-      const fw = w.m[0]?.fw
-      if (fw) wordMap.set(w.w, fw)
-    }
+    const wordMap = await buildEnWordMap()
     return tokens
       .map((t) => {
         if (!t.trim()) return t
@@ -236,16 +310,6 @@ export async function translateOfflineWordByWord(text: string, dir: 'en2fa' | 'f
     }
   }
   return out.join('')
-}
-
-async function loadAllLettersSilent(): Promise<WordEntry[]> {
-  await ensureAllLoaded()
-  const all: WordEntry[] = []
-  for (const l of LETTERS) {
-    const cached = indexCache.get(l)
-    if (cached) all.push(...cached)
-  }
-  return all
 }
 
 export function todayStr(): string {

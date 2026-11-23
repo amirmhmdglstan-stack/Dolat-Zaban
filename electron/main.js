@@ -62,7 +62,7 @@ async function createWindow() {
     minHeight: 560,
     icon: path.join(__dirname, '..', 'build', 'icon.png'),
     autoHideMenuBar: true,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#057855',
     webPreferences: {
       contextIsolation: true,
       nodeIntegration: false,
