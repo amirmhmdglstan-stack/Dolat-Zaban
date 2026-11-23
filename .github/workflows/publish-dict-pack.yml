@@ -1,0 +1,48 @@
+name: Publish dictionary pack
+
+# Rebuilds the extended dictionary pack from its public source datasets and
+# attaches dict-ext.json.gz to the "dict-ext" release. Run this whenever
+# scripts/build-ext-dict.mjs or the source datasets change, then bump
+# src/lib/ext-pack.ts (the build script writes it) and commit.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-pack:
+    name: Build and upload pack
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Download source datasets
+        run: |
+          mkdir -p tmp-data
+          curl -sL -o tmp-data/shirin.tar.gz "https://codeload.github.com/shirin-manzari/english-persian-dictionary-dataset/tar.gz/refs/heads/main"
+          tar -xzf tmp-data/shirin.tar.gz -C tmp-data
+          curl -sL -o tmp-data/cmudict.tar.gz "https://codeload.github.com/cmusphinx/cmudict/tar.gz/refs/heads/master"
+          tar -xzf tmp-data/cmudict.tar.gz -C tmp-data
+          curl -sL -H "Accept: application/vnd.github.raw" \
+            "https://api.github.com/repos/shahabahreini/English-Persian-Dictionary/contents/data/English-Persian.v3.1.tsv" \
+            > tmp-data/enfa.tsv
+          wc -l tmp-data/enfa.tsv
+
+      - name: Build pack
+        run: node scripts/build-ext-dict.mjs
+
+      - name: Upload pack to the dict-ext release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload dict-ext tmp-data/out/dict-ext.json.gz --clobber \
+            || (gh release create dict-ext --target main --title "Extended dictionary pack" \
+                --notes "Downloadable full dictionary data for Dolat Zaban." \
+                && gh release upload dict-ext tmp-data/out/dict-ext.json.gz)
+          gh release view dict-ext --json assets --jq '.assets[] | "\(.name) \(.size)"'
