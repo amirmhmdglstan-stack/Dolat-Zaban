@@ -1,9 +1,9 @@
 'use client'
 
 const DB_NAME = 'dolat-zaban'
-const DB_VERSION = 1
+const DB_VERSION = 2
 
-export type StoreName = 'letters' | 'history' | 'meta'
+export type StoreName = 'letters' | 'history' | 'meta' | 'ext'
 
 let dbPromise: Promise<IDBDatabase> | null = null
 
@@ -17,6 +17,7 @@ function openDb(): Promise<IDBDatabase> {
       if (!db.objectStoreNames.contains('letters')) db.createObjectStore('letters')
       if (!db.objectStoreNames.contains('history')) db.createObjectStore('history', { keyPath: 'id', autoIncrement: true })
       if (!db.objectStoreNames.contains('meta')) db.createObjectStore('meta')
+      if (!db.objectStoreNames.contains('ext')) db.createObjectStore('ext')
     }
     req.onsuccess = () => resolve(req.result)
     req.onerror = () => reject(req.error)
@@ -95,7 +96,7 @@ export async function idbStorageSize(): Promise<number> {
     /* noop */
   }
   let total = 0
-  for (const store of ['letters', 'history'] as StoreName[]) {
+  for (const store of ['letters', 'history', 'ext'] as StoreName[]) {
     const vals = await tx<unknown[]>(store, 'readonly', (s) => s.getAll()).catch(() => [])
     for (const v of vals ?? []) total += JSON.stringify(v).length
   }

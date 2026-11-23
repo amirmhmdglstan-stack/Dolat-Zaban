@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useSettings, useUi } from '@/lib/store'
-import { LETTERS, loadLetter, getWordEntry, searchDictionary, type SearchResults } from '@/lib/dict'
+import { LETTERS, loadLetterFull, getWordEntry, searchDictionary, type SearchResults } from '@/lib/dict'
 import { fmt } from '@/lib/i18n'
 import { openWordSheet } from '@/lib/nav'
 import { useT } from './use-app'
@@ -12,7 +12,7 @@ import type { WordEntry } from '@/lib/types'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-import { Search, X, Heart, CircleHelp, ChevronRight, Loader2 } from 'lucide-react'
+import { Search, X, Heart, CircleHelp, ChevronRight, Loader2, Globe } from 'lucide-react'
 
 function WordRow({ word }: { word: WordEntry }) {
   return (
@@ -23,6 +23,7 @@ function WordRow({ word }: { word: WordEntry }) {
       <div className="min-w-0 flex-1">
         <p dir="ltr" className="font-en truncate text-left text-[15px] font-semibold">
           {word.w}
+          {word.via && <span className="ms-1.5 text-[11px] font-normal text-muted-foreground">({word.via})</span>}
         </p>
         {word.m[0]?.fw && (
           <p dir="rtl" className="font-fa truncate text-right text-[13px] text-muted-foreground">
@@ -31,6 +32,11 @@ function WordRow({ word }: { word: WordEntry }) {
           </p>
         )}
       </div>
+      {word.src === 'ext' && (
+        <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[9.5px] font-bold uppercase tracking-wide text-primary">
+          ext
+        </span>
+      )}
       <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground/60 rtl:-scale-x-100" />
     </button>
   )
@@ -93,7 +99,7 @@ export function DictionaryView() {
         }
       })
     } else {
-      loadLetter(dictLetter)
+      loadLetterFull(dictLetter)
         .then((words) => {
           if (active) setListData({ key: dictLetter, words })
         })
@@ -117,7 +123,7 @@ export function DictionaryView() {
     try {
       setResults(await searchDictionary(q))
     } catch {
-      setResults({ starts: [], contains: [], meanings: [] })
+      setResults({ starts: [], contains: [], meanings: [], ext: null })
     } finally {
       setSearching(false)
     }
@@ -191,15 +197,48 @@ export function DictionaryView() {
           )}
           {results && !searching && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-5">
-              {results.starts.length === 0 && results.contains.length === 0 && results.meanings.length === 0 ? (
-                <p className="rounded-2xl border border-dashed border-border bg-card/60 px-4 py-8 text-center text-sm text-muted-foreground">
-                  {t.noResults}
-                </p>
+              {results.starts.length === 0 &&
+              results.contains.length === 0 &&
+              results.meanings.length === 0 &&
+              !results.ext?.starts.length &&
+              !results.ext?.contains.length &&
+              !results.ext?.meanings.length ? (
+                <div className="rounded-2xl border border-dashed border-border bg-card/60 px-4 py-8 text-center">
+                  <p className="text-sm text-muted-foreground">{t.noResults}</p>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="mt-3 rounded-xl"
+                    onClick={() => {
+                      const q = dictQuery.trim()
+                      if (q) openWordSheet(q)
+                    }}
+                  >
+                    <Globe className="h-3.5 w-3.5" />
+                    {t.onlineSearch}
+                  </Button>
+                </div>
               ) : (
                 <>
                   <ResultSection title={t.startsWith.replace('{q}', dictQuery.trim())} words={results.starts} />
                   <ResultSection title={t.includesWord.replace('{q}', dictQuery.trim())} words={results.contains} />
                   <ResultSection title={t.inMeanings.replace('{q}', dictQuery.trim())} words={results.meanings} />
+                  {results.ext && (
+                    <>
+                      <ResultSection
+                        title={`${t.extended} · ${t.startsWith.replace('{q}', dictQuery.trim())}`}
+                        words={results.ext.starts}
+                      />
+                      <ResultSection
+                        title={`${t.extended} · ${t.includesWord.replace('{q}', dictQuery.trim())}`}
+                        words={results.ext.contains}
+                      />
+                      <ResultSection
+                        title={`${t.extended} · ${t.inMeanings.replace('{q}', dictQuery.trim())}`}
+                        words={results.ext.meanings}
+                      />
+                    </>
+                  )}
                 </>
               )}
             </motion.div>

@@ -6,6 +6,8 @@ import { useT } from './use-app'
 import { useSettings } from '@/lib/store'
 import { fmt } from '@/lib/i18n'
 import { cachedLetters, loadAllLetters, loadLetter } from '@/lib/dict'
+import { extStatus, installExtPack, deleteExtPack, type ExtStatus } from '@/lib/ext'
+import { EXT_PACK } from '@/lib/ext-pack'
 import { getVoices, speak } from '@/lib/tts'
 import { idbClear, idbGet, idbHistoryAdd, idbHistoryAll, idbSet, idbKeys } from '@/lib/idb'
 import { formatBytes } from '@/lib/update'
@@ -34,6 +36,8 @@ import {
   Trash2,
   Import,
   HardDrive,
+  LibraryBig,
+  RefreshCw,
 } from 'lucide-react'
 import { toast } from 'sonner'
 
@@ -79,17 +83,25 @@ export function OfflineView() {
   })
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([])
   const [historyCount, setHistoryCount] = useState(0)
+  const [ext, setExt] = useState<ExtStatus | null>(null)
+  const [extProgress, setExtProgress] = useState<{ phase: 'idle' | 'downloading' | 'processing'; done: number; total: number }>({
+    phase: 'idle',
+    done: 0,
+    total: 1,
+  })
   const fileRef = useRef<HTMLInputElement>(null)
 
   const refresh = useCallback(async () => {
-    const [letters, size, history] = await Promise.all([
+    const [letters, size, history, extState] = await Promise.all([
       cachedLetters(),
       lettersSize(),
       idbHistoryAll().catch(() => [] as TranslationHistoryItem[]),
+      extStatus().catch(() => ({ installed: false, meta: null, updateAvailable: false }) as ExtStatus),
     ])
     setLettersReady(letters)
     setDictSize(size)
     setHistoryCount(history.length)
+    setExt(extState)
   }, [])
 
   useEffect(() => {
@@ -117,6 +129,24 @@ export function OfflineView() {
       await refresh()
     } catch {
       toast.error(lang === 'fa' ? 'بارگیری این حرف ممکن نشد.' : 'Could not download this letter.')
+    }
+  }
+
+  const installExt = async () => {
+    if (extProgress.phase !== 'idle') return
+    if (typeof navigator !== 'undefined' && navigator.onLine === false) {
+      toast.error(t.extNeedOnline)
+      return
+    }
+    setExtProgress({ phase: 'downloading', done: 0, total: EXT_PACK.gzBytes })
+    try {
+      await installExtPack((phase, done, total) => setExtProgress({ phase, done, total }))
+      await refresh()
+      toast(t.extInstallDone)
+    } catch {
+      toast.error(t.extInstallFail)
+    } finally {
+      setExtProgress({ phase: 'idle', done: 0, total: 1 })
     }
   }
 
@@ -201,6 +231,100 @@ export function OfflineView() {
 
   return (
     <div className="space-y-4 px-4 pb-10 pt-4">
+      <Section
+        icon={<LibraryBig className="h-5 w-5" />}
+        title={t.extTitle}
+        desc={t.extDesc}
+      >
+        <div className="flex items-center justify-between gap-3">
+          <span className="text-[13px] font-medium text-muted-foreground">
+            {ext?.installed && ext.meta ? (
+              <>
+                {fmt(t.wordsCount, { n: ext.meta.words })} · v{ext.meta.version}
+                {ext.updateAvailable && (
+                  <span className="ms-2 rounded-full bg-primary/12 px-2 py-0.5 text-[11px] font-bold text-primary">
+                    {t.newVersionShort}
+                  </span>
+                )}
+              </>
+            ) : (
+              <>
+                {fmt(t.wordsCount, { n: EXT_PACK.words })} · {formatBytes(EXT_PACK.gzBytes)}
+              </>
+            )}
+          </span>
+          <Button
+            onClick={installExt}
+            disabled={extProgress.phase !== 'idle'}
+            className="rounded-xl px-4"
+            size="sm"
+            variant={ext?.installed ? 'outline' : 'default'}
+          >
+            {extProgress.phase !== 'idle' ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : ext?.installed ? (
+              <RefreshCw className="h-4 w-4" />
+            ) : (
+              <Download className="h-4 w-4" />
+            )}
+            {ext?.installed ? t.extUpdateBtn : t.extInstall}
+          </Button>
+        </div>
+        {extProgress.phase !== 'idle' && (
+          <div className="mt-3 space-y-1.5">
+            <Progress
+              value={
+                extProgress.phase === 'downloading'
+                  ? (extProgress.done / extProgress.total) * 90
+                  : 90 + (extProgress.done / extProgress.total) * 10
+              }
+              className="h-2"
+            />
+            <p className="text-[12px] text-muted-foreground">
+              {extProgress.phase === 'downloading'
+                ? fmt(t.extProgressDownload, { p: Math.min(99, Math.round((extProgress.done / extProgress.total) * 100)) })
+                : fmt(t.extProgressProcess, { n: Math.min(extProgress.done, extProgress.total), total: extProgress.total })}
+            </p>
+          </div>
+        )}
+        {ext?.installed && (
+          <div className="mt-3 text-end">
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="rounded-lg text-destructive hover:bg-destructive/10 hover:text-destructive"
+                >
+                  <Trash2 className="h-4 w-4" />
+                  {t.extDelete}
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>{t.clearConfirmTitle}</AlertDialogTitle>
+                  <AlertDialogDescription>{t.clearConfirmDesc}</AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>{t.cancel}</AlertDialogCancel>
+                  <AlertDialogAction
+                    className="bg-destructive text-white hover:bg-destructive/90"
+                    onClick={() => {
+                      deleteExtPack()
+                        .then(refresh)
+                        .then(() => toast(t.extDeleted))
+                        .catch(() => undefined)
+                    }}
+                  >
+                    {t.delete}
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          </div>
+        )}
+      </Section>
+
       <Section icon={<BookOpen className="h-5 w-5" />} title={t.dictTitle} desc={t.dictDesc}>
         <div className="flex items-center justify-between gap-3">
           <span className="text-[13px] font-medium text-muted-foreground">

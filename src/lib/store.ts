@@ -29,7 +29,7 @@ export const useSettings = create<SettingsState>()(
   persist(
     (set) => ({
       lang: 'en',
-      palette: 'blue',
+      palette: 'green',
       textSize: 2,
       mode: 'system',
       favorites: [],

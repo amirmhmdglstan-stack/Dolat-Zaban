@@ -23,9 +23,9 @@ import { Check, Trash2, RefreshCw, Loader2 } from 'lucide-react'
 import { toast } from 'sonner'
 
 const PALETTES: { key: Palette; color: string; name: string }[] = [
+  { key: 'green', color: '#057855', name: 'Green' },
   { key: 'blue', color: '#2563eb', name: 'Blue' },
   { key: 'teal', color: '#0d9488', name: 'Teal' },
-  { key: 'green', color: '#16a34a', name: 'Green' },
   { key: 'orange', color: '#ea580c', name: 'Orange' },
   { key: 'rose', color: '#e11d48', name: 'Rose' },
   { key: 'violet', color: '#7c3aed', name: 'Violet' },

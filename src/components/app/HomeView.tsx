@@ -4,10 +4,11 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useSettings, useUi } from '@/lib/store'
 import { getWordEntry } from '@/lib/dict'
-import { openWordSheet } from '@/lib/nav'
+import { openWordSheet, goView } from '@/lib/nav'
 import { useT } from './use-app'
 import type { WordEntry } from '@/lib/types'
-import { ChevronDown, History, Loader2 } from 'lucide-react'
+import { ChevronDown, History, Loader2, Search, BookOpen, Languages, FolderDown, Sparkles } from 'lucide-react'
+import { Input } from '@/components/ui/input'
 
 function useGreeting(): { greeting: string; sub: string } {
   const { t } = useT()
@@ -57,21 +58,27 @@ function WordOfDayCard() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, delay: 0.05 }}
       onClick={() => openWordSheet(wotdWord)}
-      className="brand-gradient relative min-h-[38dvh] w-full overflow-hidden rounded-3xl p-6 text-start shadow-lg shadow-primary/20 transition-transform active:scale-[0.985]"
+      className="brand-gradient relative min-h-[34dvh] w-full overflow-hidden rounded-3xl p-6 text-start shadow-lg shadow-primary/25 transition-transform active:scale-[0.985]"
       aria-label={t.wordOfDay}
     >
       <div className="pointer-events-none absolute -end-14 -top-14 h-40 w-40 rounded-full bg-white/10" />
       <div className="pointer-events-none absolute -bottom-24 -start-12 h-48 w-48 rounded-full bg-white/[0.07]" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
       <div className="relative flex h-full min-h-[inherit] flex-col justify-between py-2">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/85">{t.wordOfDay}</p>
+        <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/85">
+          <Sparkles className="h-3.5 w-3.5" />
+          {t.wordOfDay}
+        </p>
         {entry ? (
           <div className="space-y-3">
-            <p dir="ltr" className="font-en text-left text-[42px] font-extrabold leading-none text-white">
+            <p dir="ltr" className="font-en text-left text-[42px] font-extrabold leading-none text-white drop-shadow-sm">
               {entry.w}
             </p>
-            <p dir="ltr" className="font-en text-left text-sm text-white/80">
-              /{entry.ipa}/
-            </p>
+            {entry.ipa && (
+              <p dir="ltr" className="font-en text-left text-sm text-white/80">
+                /{entry.ipa}/
+              </p>
+            )}
             {entry.m[0]?.fw && (
               <span
                 dir="rtl"
@@ -95,11 +102,83 @@ function WordOfDayCard() {
   )
 }
 
+function QuickActions() {
+  const { t } = useT()
+  const items = [
+    { key: 'dictionary' as const, label: t.dictionary, icon: BookOpen },
+    { key: 'translate' as const, label: t.translate, icon: Languages },
+    { key: 'offline' as const, label: t.offlineContent, icon: FolderDown },
+  ]
+  return (
+    <div className="mt-5 grid grid-cols-3 gap-2.5">
+      {items.map((item, i) => (
+        <motion.button
+          key={item.key}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.28, delay: 0.06 + i * 0.05 }}
+          onClick={() => goView(item.key)}
+          className="flex flex-col items-center gap-2 rounded-2xl border border-border/70 bg-card px-2 py-4 text-center transition-all hover:border-primary/40 hover:shadow-sm active:scale-[0.97]"
+        >
+          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <item.icon className="h-5 w-5" />
+          </span>
+          <span className="text-[12px] font-semibold leading-tight">{item.label}</span>
+        </motion.button>
+      ))}
+    </div>
+  )
+}
+
+function HomeSearch() {
+  const { t } = useT()
+  const setDictQuery = useUi((s) => s.setDictQuery)
+  const [value, setValue] = useState('')
+  const [busy, setBusy] = useState(false)
+
+  const go = async () => {
+    const q = value.trim()
+    if (!q || busy) {
+      if (!q) goView('dictionary')
+      return
+    }
+    setBusy(true)
+    try {
+      setDictQuery(q)
+      goView('dictionary')
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  return (
+    <div className="relative mt-5">
+      <Input
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') go()
+        }}
+        placeholder={t.searchPlaceholder}
+        dir="ltr"
+        className="font-en h-12 rounded-2xl bg-card pe-12 text-[15px] shadow-sm"
+        aria-label={t.search}
+      />
+      <button
+        onClick={go}
+        aria-label={t.search}
+        className="absolute inset-y-0 end-1.5 flex w-10 items-center justify-center rounded-xl text-primary"
+      >
+        {busy ? <Loader2 className="h-[18px] w-[18px] animate-spin" /> : <Search className="h-[18px] w-[18px]" />}
+      </button>
+    </div>
+  )
+}
+
 export function HomeView() {
   const { t } = useT()
   const { greeting, sub } = useGreeting()
   const recents = useSettings((s) => s.recents)
-  const menuOpen = useUi((s) => s.menuOpen)
 
   return (
     <div className="px-4 pb-10 pt-6">
@@ -108,7 +187,10 @@ export function HomeView() {
         <p className="mt-1 text-[15px] text-muted-foreground">{sub}</p>
       </motion.section>
 
-      <div className="mt-5">
+      <HomeSearch />
+      <QuickActions />
+
+      <div className="mt-6">
         <WordOfDayCard />
       </div>
 

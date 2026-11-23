@@ -35,7 +35,7 @@ export const viewport: Viewport = {
   ],
 }
 
-const initScript = `(function(){try{var s=(JSON.parse(localStorage.getItem('dolatzaban-settings')||'{}').state)||{};var d=document.documentElement;if(s.lang==='fa'){d.lang='fa';d.dir='rtl'}else{d.lang='en';d.dir='ltr'}var m=s.mode||'system';var dark=m==='dark'||(m!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(dark){d.classList.add('dark')}if(s.palette&&s.palette!=='blue'){d.setAttribute('data-theme',s.palette)}var ts=[14,15,16,17.5,19];if(typeof s.textSize==='number'&&s.textSize!==2&&ts[s.textSize]){d.style.fontSize=ts[s.textSize]+'px'}}catch(e){}})()`
+const initScript = `(function(){try{var s=(JSON.parse(localStorage.getItem('dolatzaban-settings')||'{}').state)||{};var d=document.documentElement;if(s.lang==='fa'){d.lang='fa';d.dir='rtl'}else{d.lang='en';d.dir='ltr'}var m=s.mode||'system';var dark=m==='dark'||(m!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(dark){d.classList.add('dark')}var p=s.palette||'green';if(p!=='green'){d.setAttribute('data-theme',p)}var ts=[14,15,16,17.5,19];if(typeof s.textSize==='number'&&s.textSize!==2&&ts[s.textSize]){d.style.fontSize=ts[s.textSize]+'px'}}catch(e){}})()`
 
 export default function RootLayout({
   children,
